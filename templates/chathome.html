@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>chatbot</title>
+</head>
+<script>
+    function getCookie(name){
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== ''){
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++){
+                var cookie = jQuery.trim(cookies[i]);
+                if(cooke.substring(0,name.length + 1) === (name + '=')){
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+
+    var csrftoken = getCookie('csrftoken');
+    var xhr;
+
+    function sendAsk(){
+        var chattext = "Hi"
+        checktxt = "<div>"+chattext+"</div>";
+        document.getElementById("check").innerHTML += checktxt;
+
+        var strurl = "chatanswer?questext=" + chattext;
+        xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4) {
+                var data = xhr.responseText;
+
+                var obj = JSON.parse(data);
+
+                if(obj.flag == "0"){
+
+                    bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + obj.anstext + "</span></div>";
+                    document.getElementById("chatbox").innerHTML += bottext;
+
+                    var objDiv = document.getElementById("chatbox");
+                    objDiv.scrollTop = objDiv.scrollHeight;
+
+                    document.getElementById("chattext").value = "";
+                    document.getElementById("chattext").focus();
+
+                }
+            }
+        };
+        xhr.open("GET", strurl);
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+        xhr.send(null);
+    }
+    function check(){
+        var checktxt = "<div>"+"Hi"+"</div>";
+        document.getElementById("check").innerHTML += checktxt;
+    }
+</script>
+
+<body>
+    <div>
+        <button onclick="sendAsk()">answer</button>
+    </div>
+    <div id="check"></div>
+    <div id="chatbox"></div>
+</body>
+</html>
