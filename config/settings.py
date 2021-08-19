@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -28,6 +29,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
+model = AutoModelForCausalLM.from_pretrained("bot/static/friends_model")
 
 # Application definition
 

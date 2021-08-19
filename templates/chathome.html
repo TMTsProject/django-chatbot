@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>chatbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <script>
     function getCookie(name){
@@ -24,7 +26,8 @@
     var xhr;
 
     function sendAsk(){
-        var chattext = "Hi"
+        var chattext = $('#inputId').val();
+        console.log(chattext)
         checktxt = "<div>"+chattext+"</div>";
         document.getElementById("check").innerHTML += checktxt;
 
@@ -59,9 +62,10 @@
         document.getElementById("check").innerHTML += checktxt;
     }
 </script>
-
 <body>
     <div>
+        <input type="text" id="inputId" name="inputName">
+        <input type="button" onclick="sendAsk()" value="Get Value">
         <button onclick="sendAsk()">answer</button>
     </div>
     <div id="check"></div>
