@@ -62,6 +62,7 @@
         xhr.open("GET", strurl);
         xhr.setRequestHeader("X-CSRFToken", csrftoken);
         xhr.send(null);
+        $('#inputId').val('');
     }
     function check(){
         var checktxt = "<div>"+"Hi"+"</div>";
