@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>chatbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 </head>
 <script>
     function getCookie(name){
@@ -23,8 +25,15 @@
     var csrftoken = getCookie('csrftoken');
     var xhr;
 
+    function enterkey() {
+        if (window.event.keyCode == 13) {
+            sendAsk();
+        }
+    }
+
     function sendAsk(){
-        var chattext = "Hi"
+        var chattext = $('#inputId').val();
+        console.log(chattext)
         checktxt = "<div>"+chattext+"</div>";
         document.getElementById("check").innerHTML += checktxt;
 
@@ -39,13 +48,13 @@
                 if(obj.flag == "0"){
 
                     bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + obj.anstext + "</span></div>";
-                    document.getElementById("chatbox").innerHTML += bottext;
+                    document.getElementById("check").innerHTML += bottext;
 
-                    var objDiv = document.getElementById("chatbox");
+                    var objDiv = document.getElementById("check");
                     objDiv.scrollTop = objDiv.scrollHeight;
 
-                    document.getElementById("chattext").value = "";
-                    document.getElementById("chattext").focus();
+                    document.getElementById("check").value = "";
+                    document.getElementById("check").focus();
 
                 }
             }
@@ -53,16 +62,17 @@
         xhr.open("GET", strurl);
         xhr.setRequestHeader("X-CSRFToken", csrftoken);
         xhr.send(null);
+        $('#inputId').val('');
     }
     function check(){
         var checktxt = "<div>"+"Hi"+"</div>";
         document.getElementById("check").innerHTML += checktxt;
     }
 </script>
-
 <body>
     <div>
-        <button onclick="sendAsk()">answer</button>
+        <input type="text" id="inputId" name="inputName" onkeyup="enterkey();">
+        <input type="button" onclick="sendAsk()" value="Get Value">
     </div>
     <div id="check"></div>
     <div id="chatbox"></div>

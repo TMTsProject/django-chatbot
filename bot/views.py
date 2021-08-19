@@ -6,6 +6,7 @@ from django.views.decorators.csrf import csrf_exempt
 from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import time
+from config import settings
 
 # Create your views here.
 def home(request):
@@ -18,17 +19,17 @@ def chatanswer(request):
     context = {}
     questext = request.GET['questext']
     print(questext)
-    tokenizer = AutoTokenizer.from_pretrained('static/friends_tokenizer')
-    model = AutoModelForCausalLM.from_pretrained("static/friends_model")
 
     import colorama
+    model = settings.model
+    tokenizer = settings.tokenizer
     colorama.init()
     print("loading : ", time.time() - start)
+
     def chat3(user_input_text):
         new_user_input_ids = None
         bot_input_ids = None
         chat_history_ids = None
-
         new_user_input_ids = tokenizer.encode(user_input_text + tokenizer.eos_token, return_tensors='pt')
 
         bot_input_ids = torch.cat([chat_history_ids, new_user_input_ids],
