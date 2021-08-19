@@ -79,15 +79,17 @@
         var rt_msg_all = []
         console.log(response);
         matches = response.matches
-        rt_msg = ""
+        
         if (matches.length === 0) { 
             // 맞는 문장
+            rt_msg = ""
         }
         else{
             // 틀린 문장
             // 오류가 여러 개면 여러 개 출력 
             console.log(matches.length)
             for (var m = 0; m < matches.length; m++){
+                rt_msg = ""
                 err = matches[m].shortMessage;
                 if (err == 'Spelling mistake') {
                     rt_msg += "There is a spelling mistake.<br>The chatbot may not work smoothly.<br>"
