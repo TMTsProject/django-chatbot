@@ -46,6 +46,8 @@
                 var obj = JSON.parse(data);
 
                 if(obj.flag == "0"){
+                    checker = "<div style='color:red'>" + obj.checker + "<div>"
+                    document.getElementById("check").innerHTML += checker
 
                     bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + obj.anstext + "</span></div>";
                     document.getElementById("check").innerHTML += bottext;
@@ -63,10 +65,6 @@
         xhr.setRequestHeader("X-CSRFToken", csrftoken);
         xhr.send(null);
         $('#inputId').val('');
-    }
-    function check(){
-        var checktxt = "<div>"+"Hi"+"</div>";
-        document.getElementById("check").innerHTML += checktxt;
     }
 </script>
 <body>

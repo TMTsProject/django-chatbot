@@ -7,6 +7,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import time
 from config import settings
+from . import api
 
 # Create your views here.
 def home(request):
@@ -53,5 +54,6 @@ def chatanswer(request):
 
     context['anstext'] = anstext
     context['flag'] = '0'
+    context['checker'] = api.languageTool(questext)
 
     return JsonResponse(context, content_type="application/json")
