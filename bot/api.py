@@ -28,12 +28,16 @@ def languageTool(text):
         #틀린 문장    
         msg = ""
 		# 오류가 여러개면 여러개 출력하도록 함.
+        mis = False
         for m in range(len(matches)):
             err =  matches[m]['shortMessage']
             # spelling mistake : 철자오류 또는 띄어쓰기 오류
             # 그런 종류의 오류는 무시함
             if err == 'Spelling mistake' :
-                msg += "There is a spelling mistake. The chatbot may not work smoothly.\n"
+                if mis :
+                    continue
+                msg += "There is a spelling mistake. The chatbot may not work smoothly.<br>"
+                mis = True
                 continue
             elif err == '':
                 continue
