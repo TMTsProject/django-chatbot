@@ -48,13 +48,13 @@
                 if(obj.flag == "0"){
 
                     bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + obj.anstext + "</span></div>";
-                    document.getElementById("chatbox").innerHTML += bottext;
+                    document.getElementById("check").innerHTML += bottext;
 
-                    var objDiv = document.getElementById("chatbox");
+                    var objDiv = document.getElementById("check");
                     objDiv.scrollTop = objDiv.scrollHeight;
 
-                    document.getElementById("chattext").value = "";
-                    document.getElementById("chattext").focus();
+                    document.getElementById("check").value = "";
+                    document.getElementById("check").focus();
 
                 }
             }
