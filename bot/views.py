@@ -9,6 +9,9 @@ import time
 from config import settings
 from . import api
 
+def main(request):
+    return render(request, 'api-ex.html')
+
 # Create your views here.
 def home(request):
     context = {}
