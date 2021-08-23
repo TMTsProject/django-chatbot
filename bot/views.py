@@ -10,7 +10,19 @@ from config import settings
 from . import api
 
 def main(request):
+    return render(request, 'main.html')
+
+def api(request):
     return render(request, 'api-ex.html')
+
+def ch1(request):
+    return render(request, 'ch1.html')
+
+def ch2(request):
+    return render(request, 'ch2.html')
+
+def devInfo(request):
+    return render(request, 'info_developer.html')
 
 # Create your views here.
 def home(request):

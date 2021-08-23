@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>miso개발자소개</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css"></style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript"></script> 
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0px solid silver;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1rem;
+            color: black;
+            background-color: #e6e6fa;
+            letter-spacing: 0.1px;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            line-height: 2.4rem;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+            margin-bottom: 1.6rem;
+        }
+
+        h4,
+        h5 {
+            font-family: 'Noto Sans KR', serif;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            line-height: 1.1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        h5 {
+            font-size: 0.7rem;
+            line-height: 0.7rem;
+            margin-bottom: 1.6rem;
+        }
+
+        a:link {
+            color: #666;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #666;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            color: red;
+        }
+
+        .solid {
+            font-size: 4rem;
+            line-height: 2rem;
+            color: #999;
+        }
+
+        /*----start----*/
+        /* header */
+
+        header {
+            position: fixed;
+            background: #7b6ecc;
+            z-index: 999;
+            width: 100%;
+            color: white;
+            text-transform: uppercase;
+            padding: 7px 5%;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+            header > div {
+                font-weight: bold;
+                font-size: 1.5rem;
+                line-height: 3rem;
+            }
+
+                header > div:hover {
+                    color: pink;
+                }
+
+            header nav {
+                display: flex;
+                justify-content: space-between;
+            }
+
+                header nav a {
+                    padding: 0 20px;
+                    font-size: 1rem;
+                    transition: 0.7s;
+                    line-height: 3rem;
+                }
+
+                    header nav a:hover {
+                        background: black;
+                    }
+
+        .meet {
+            width: 1000px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+
+            .meet > :nth-child(1) h2 {
+                text-align: left;
+            }
+
+            .meet > :nth-child(2) {
+                color: black;
+                clear: both;
+            }
+
+                .meet > :nth-child(2) > :first-child {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                .meet > :nth-child(2) > :last-child {
+                    display: flex;
+                    justify-content: center;
+                }
+
+            .meet section {
+                margin: 50px 0;
+                text-align: center;
+            }
+
+            .meet > :nth-child(2) > :last-child section {
+                margin: 50px 80px;
+            }
+
+            .meet img {
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                margin-bottom: 30px;
+            }
+
+        footer {
+            background: #9e97cc;
+            padding: 50px;
+        }
+
+            footer > div {
+                width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            footer div div {
+                width: 100%;
+                padding: 0 20px 0 0;
+            }
+
+            footer h3 {
+                color: lightgrey;
+            }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div onclick="window.location.href='#'">
+            XD Logo
+
+        </div>
+        <nav>
+            <a href="main.html">XD main</a>
+            <a href="info_developer.html">개발자 소개</a>
+            <a href="ch1.html">학습하기</a>
+            <a href="ch2.html">문제 풀기</a>
+        </nav>
+    </header>
+
+
+    <article class="meet">
+
+
+        <div>
+            <h2>Meet our team</h2>
+        </div>
+
+
+        <div>
+            <div>
+                <section>
+                    <img src="https://images.unsplash.com/photo-1551292831-023188e78222?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <h3>닉네임</h3>
+                    <h5>업무</h5>
+                    이메일@mail.com
+                </section>
+                <section>
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <h3>닉네임</h3>
+                    <h5>업무</h5>
+                    이메일@mail.com
+                </section>
+                <section>
+                    <img src="https://images.unsplash.com/photo-1556632973-57d167636a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <h3>닉네임</h3>
+                    <h5>업무</h5>
+                    이메일@mail.com
+                </section>
+            </div>
+
+            <div>
+                <section>
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <h3>닉네임</h3>
+                    <h5>업무</h5>
+                    이메일@mail.com
+                </section>
+                <section>
+                    <img src="https://images.unsplash.com/photo-1556632973-57d167636a3f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+                    <h3>닉네임</h3>
+                    <h5>업무</h5>
+                    이메일@mail.com
+                </section>
+            </div>
+        </div>
+
+
+    </article>
+
+    <footer>
+        <div>
+            <div>
+                <h3>START A PROJECT</h3>
+                We are ready for the challenge<br />
+                adobexd@mail.com
+            </div>
+            <div>
+                <h3>SAY HELLO</h3>
+                497 Evergreen Rd. Roseville, CA 95673<br />
+                +44 345 678 903
+            </div>
+            <div>
+                <h3>JOBS</h3>
+                We are always looking for talent<br />
+                adobexd@mail.com
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
