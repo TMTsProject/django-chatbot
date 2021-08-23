@@ -69,6 +69,5 @@ def chatanswer(request):
 
     context['anstext'] = anstext
     context['flag'] = '0'
-    context['checker'] = api.languageTool(questext)
 
     return JsonResponse(context, content_type="application/json")

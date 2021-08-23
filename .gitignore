@@ -2,4 +2,6 @@
 db.sqlite3
 *.pyc
 __pycache__
-bot/static/
+bot/static/friends_tokenizer
+bot/static/friends_model
+*.pickle
