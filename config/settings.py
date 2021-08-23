@@ -30,12 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', '127.0.0.1:8000']
 
-# tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
-# model = AutoModelForCausalLM.from_pretrained("bot/static/friends_model")
-with open('bot/static/friends_model.pickle', 'rb') as f:
-    model = pickle.load(f)
-with open('bot/static/friends_tokenizer.pickle', 'rb') as f:
-    tokenizer = pickle.load(f)
+tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
+model = AutoModelForCausalLM.from_pretrained("bot/static/friends_model")
+# with open('bot/static/friends_model.pickle', 'rb') as f:
+#     model = pickle.load(f)
+# with open('bot/static/friends_tokenizer.pickle', 'rb') as f:
+#     tokenizer = pickle.load(f)
 
 # Application definition
 
