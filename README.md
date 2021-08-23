@@ -11,5 +11,6 @@ friends_model의 용량이 1.34GB로 크기 때문에 깃허브에는 올리지 
 - UI도 간단하게 구현
 - 고칠 점 : getElementById 사용하여 여러개 교정 불가, 채팅 적용은 아직 안해봄  
 
+**여기서부터 작업하신다면 makemigrations와 migrate하신 후에 작업하셔야 합니다!**
 0823 채팅 기록 남도록 수정(아래에 간단하게 설명 달아놨습니다!)  
-https://www.notion.so/21-08-23-b90d7a56ee6440ed9d28cf5a992e6cc3
+https://www.notion.so/21-08-23-b90d7a56ee6440ed9d28cf5a992e6cc3  
