@@ -72,8 +72,8 @@ def chatanswer(request):
         request.session['instance'] = instance + 1
         request.session['chat_history_idx'] = chat_history_idx + [chat_history_ids.shape[-1]]
 
-        print("instance", instance)
-        print("chat_history_idx", chat_history_idx)
+        # print("instance", instance)
+        # print("chat_history_idx", chat_history_idx)
 
         if request.session['instance'] > 3:
             cv = subIdx(request.session['chat_history_idx'])
@@ -81,13 +81,13 @@ def chatanswer(request):
         
         request.session['chat_history_ids'] = chat_history_ids.tolist()
 
-        print("chat_history_ids:", chat_history_ids)
+        # print("chat_history_ids:", chat_history_ids)
 
         return answer
 
     anstext = chat3(questext)
-    print("ans : ", time.time() - start)
-    print(anstext)
+    # print("ans : ", time.time() - start)
+    # print(anstext)
 
     context['anstext'] = anstext
     context['flag'] = '0'
