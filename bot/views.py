@@ -75,7 +75,7 @@ def chatanswer(request):
         # print("instance", instance)
         # print("chat_history_idx", chat_history_idx)
 
-        if request.session['instance'] > 3:
+        if request.session['instance'] > 5:
             cv = subIdx(request.session['chat_history_idx'])
             chat_history_ids = chat_history_ids[:, cv:]
         
