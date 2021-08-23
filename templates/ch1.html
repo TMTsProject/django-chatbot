@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dreams Chat - Html Template</title>
+	
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.png">
+	
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+	
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <!-- Swiper CSS -->
+	<link rel="stylesheet" href="assets/plugins/swiper/swiper.min.css">
+
+    <!-- FancyBox CSS -->
+    <link rel="stylesheet" href="assets/plugins/fancybox/jquery.fancybox.min.css">
+
+    <!-- App styles -->
+    <link rel="stylesheet" href="assets/css/app.css">
+	
+</head>
+
+<body>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+	
+        <!-- content -->
+        <div class="content main_content">
+
+            <!-- Left Sidebar Menu -->
+            <div class="sidebar-menu">
+                <div class="logo-col">
+                    <a href="main.html"><img src="assets/img/logo.png" alt=""></a>
+                </div>
+                <div class="menus-col">
+                    <div class="chat-menus">
+                        <ul>
+                            <li>
+                                <a href="ch1.html" class="chat-unread blue">
+                                    <span class="material-icons">message</span>
+                                    <span>Chats</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="ch2.html" class="chat-unread">
+                                    <span class="material-icons">library_books</span>
+                                    <span>Grammar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="info_developer.html" class="chat-unread pink">
+                                    <span class="material-icons">group</span>
+                                    <span>Mypage</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="main.html" class="chat-unread">
+                                    <span class="material-icons">settings</span>
+                                    <span>Settings</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bottom-menus">
+                        <ul>
+                            <li>
+                                <a href="#" data-toggle="modal" data-target="#add-new-group">
+                                    <span class="material-icons group-add-btn">group_add</span>
+                                    <span>Add Groups</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="add-contacts-btn" data-toggle="modal" data-target="#add-contact">
+                                    <i class="fas fa-plus"></i>
+                                    <span>Add Contacts</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" id="dark-mode-toggle" class="dark-mode-toggle">
+                                    <i class="far fa-moon"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="chat-profile-icon" data-toggle="dropdown">
+                                    <img src="assets/img/avatar/avatar-13.jpg" alt="">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a href="#" class="dropdown-item dream_profile_menu">Edit Profile <span class="edit-profile-icon"><i class="fas fa-edit"></i></span></a>
+                                    <a href="#" class="dropdown-item">Profile <span class="profile-icon-col"><i class="fas fa-id-card-alt"></i></span></a>
+                                    <a href="settings.html" class="dropdown-item">Settings <span class="material-icons">settings</span></a>
+                                    <a href="archived.html" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
+                                    <a href="login-email.html" class="dropdown-item">Logout <span class="material-icons">power_settings_new</span></a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- /Left Sidebar Menu -->
+		
+            <!-- sidebar group -->
+            <div class="sidebar-group left-sidebar chat_sidebar">
+
+                <!-- Chats sidebar -->
+                <div id="chats" class="left-sidebar-wrap sidebar active slimscroll">
+
+                    <div class="slimscroll">
+
+                       <!-- Left Chat Title -->
+                       <div class="left-chat-title d-flex justify-content-between align-items-center">
+                            <div class="chat-title">
+                                <h4>CHATS</h4>
+                            </div>
+                            
+                       </div>
+                       <!-- /Left Chat Title -->
+
+                        <div class="search_chat has-search">
+                            <span class="fas fa-search form-control-feedback"></span>
+                            <input class="form-control chat_input" id="search-contacts" type="text" placeholder="Search Characters">
+                        </div>
+
+                        <div class="sidebar-body" id="chatsidebar">
+                           
+                            <!-- Left Chat Title -->
+                            <div class="left-chat-title d-flex justify-content-between align-items-center pl-0 pr-0">
+                                <div class="chat-title">
+                                    <h4>Recent Chats</h4>
+                                </div>
+                                <div class="add-section">
+                                    <a href="#"><i class="fas fa-edit"></i></a>
+                                </div>
+                            </div>
+                            <!-- /Left Chat Title -->
+
+                            <ul class="user-list mt-2">
+                                <li class="user-list-item">
+                                    <div class="avatar avatar-online">
+                                        <img src="assets/img/avatar_friends/monicageller.jpg" class="rounded-circle" alt="image">
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Monica Geller</h5>
+                                            <p>It seems logical that the</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">05 min</small>
+                                            <div class="new-message-count">11</div>
+                                        </div>    
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-away">
+                                            <img src="assets/img/avatar_friends/chandlerbing.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Chandler Bing</h5>
+                                            <p>It seems logical that the</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">05 min</small>
+                                            <div class="new-message-count">11</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item item-typing">
+                                    <div>
+                                        <div class="avatar avatar-online">
+                                            <img src="assets/img/avatar_friends/rachelgreen.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Rachel Green </h5>
+                                            <p><span class="animate-typing-col">
+                                                    <span class="dot"></span>
+                                                    <span class="dot"></span>
+                                                    <span class="dot"></span>
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">05 min</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-online">
+                                            <img src="assets/img/avatar_friends/phoebebuffay.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Phoebe Buffay</h5>
+                                            <p><span class="material-icons">insert_photo</span> Photo</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">45 min</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-online">
+                                            <img src="assets/img/avatar_friends/rossgeller.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Ross Geller</h5>
+                                            <p class="missed-call-col"><span class="material-icons">call_missed</span> Missed Call</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">52 min</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-online">
+                                            <img src="assets/img/avatar_friends/joeytribbiani.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Joey Tribbiani</h5>
+                                            <p><span class="material-icons">videocam</span> It seems logical that the</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">Yesterday</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-away">
+                                            <img src="assets/img/avatar/avatar-2.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>#Tech Support</h5>
+                                            <p><strong>Haidar</strong> : Hi!!!</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">Yesterday</small>
+                                            <div class="new-message-count">11</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-away">
+                                            <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Alexandr Donnelly</h5>
+                                            <p><span class="material-icons">settings_voice</span> 0.25</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">Yesterday</small>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="user-list-item">
+                                    <div>
+                                        <div class="avatar avatar-online">
+                                            <img src="assets/img/avatar/avatar-4.jpg" class="rounded-circle" alt="image">
+                                        </div>
+                                    </div>
+                                    <div class="users-list-body">
+                                        <div>
+                                            <h5>Regina Dickerson</h5>
+                                            <p>It seems logical that the</p>
+                                        </div>
+                                        <div class="last-chat-time">
+                                            <small class="text-muted">Yesterday</small>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- / Chats sidebar -->
+            </div>
+            <!-- /Sidebar group -->
+
+            <!-- Chat -->
+            <div class="chat" id="middle">
+                <div class="slimscroll">
+                    <div class="chat-header">
+                        <div class="user-details">
+                            <div class="d-lg-none ml-2">
+                                <ul class="list-inline mt-2 mr-2">
+                                    <li class="list-inline-item">
+                                        <a class="text-muted px-0 left_side" href="#" data-chat="open">
+                                            <i class="fas fa-arrow-left"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <figure class="avatar ml-1">
+                                <img src="assets/img/avatar_friends/rachelgreen.jpg" class="rounded-circle" alt="image">
+                            </figure>
+                            <div class="mt-1">
+                                <h5>Rachel Green</h5>
+                                <small class="Friends">
+                                    Friends
+                                </small>
+                            </div>
+                        </div>
+                        <div class="chat-options">
+                            <ul class="list-inline">
+                                <li class="list-inline-item" data-toggle="tooltip" title=""
+                                    data-original-title="Search">
+                                    <a href="javascript:void(0)" class="btn btn-outline-light chat-search-btn" >
+                                        <i class="fas fa-search"></i>
+                                    </a>
+                                </li>
+                       
+                        </div>
+                        <!-- Chat Search -->
+                        <div class="chat-search">
+                            <form>
+                                <span class="fas fa-search form-control-feedback"></span>
+                                <input type="text" name="chat-search" placeholder="Search Chats" class="form-control">
+                                <div class="close-btn-chat"><span class="material-icons">close</span></div>
+                            </form>
+                        </div>
+                        <!-- /Chat Search -->
+                    </div>
+                    <div class="chat-body">
+                        <div class="messages">
+                            <div class="chats">
+                                <div class="chat-avatar">
+                                    <img src="assets/img/avatar_friends/rachelgreen.jpg" class="rounded-circle dreams_chat" alt="image">
+                                </div>
+                                <div class="chat-content">
+                                    <div class="message-content">
+                                        Hi James! What’s Up?
+                                        <div class="chat-time">
+                                            <div>
+                                                <div class="time"><i class="fas fa-clock"></i> 10:00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-profile-name">
+                                        <h6>Rachel Green</h6>
+                                    </div>
+                                </div>
+                                <div class="chat-action-btns ml-3">
+                                    <div class="chat-action-col">
+                                        <a class="#" href="#" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item dream_profile_menu">Copy <span ><i class="far fa-copy"></i></span></a>
+                                            <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>
+                                            <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>
+                                            <a href="#" class="dropdown-item">Delete <span><i class="far fa-trash-alt"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chats chats-right">
+                                <div class="chat-content">
+                                    <div class="message-content">
+                                        Good morning, How are you? What about our next meeting?
+                                        <div class="chat-time">
+                                            <div>
+                                                <div class="time"><i class="fas fa-clock"></i> 10:00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-profile-name text-right">
+                                        <h6>Me</h6>
+                                    </div>
+                                </div>
+                                <div class="chat-avatar">
+                                    <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">
+                                </div>
+                                <div class="chat-action-btns mr-2">
+                                    <div class="chat-action-col">
+                                        <a class="#" href="#" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item dream_profile_menu">Copy <span ><i class="far fa-copy"></i></span></a>
+                                            <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>
+                                            <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>
+                                            <a href="#" class="dropdown-item">Delete <span><i class="far fa-trash-alt"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="chat-read-col">
+                                        <span class="material-icons">done_all</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chats">
+                                <div class="chat-avatar">
+                                    <img src="assets/img/avatar_friends/rachelgreen.jpg" class="rounded-circle dreams_chat" alt="image">
+                                </div>
+                                <div class="chat-content">
+                                    <div class="message-content">
+                                        & Next meeting tomorrow 10.00AM
+                                        <div class="chat-time">
+                                            <div>
+                                                <div class="time"><i class="fas fa-clock"></i>  10:06</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-profile-name">
+                                        <h6>Rachel Green</h6>
+                                    </div>
+                                </div>
+                                <div class="chat-action-btns ml-3">
+                                    <div class="chat-action-col">
+                                        <a class="#" href="#" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item dream_profile_menu">Copy <span ><i class="far fa-copy"></i></span></a>
+                                            <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>
+                                            <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>
+                                            <a href="#" class="dropdown-item">Delete <span><i class="far fa-trash-alt"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-line">
+                                <span class="chat-date">Today</span>
+                            </div>
+                            <div class="chats chats-right">
+                                <div class="chat-content">
+                                    <div class="message-content">
+                                        Wow Thats Great
+                                        <div class="chat-time">
+                                            <div>
+                                                <div class="time"><i class="fas fa-clock"></i> 10:02</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-profile-name text-right">
+                                        <h6>Me</h6>
+                                    </div>
+                                </div>
+                                <div class="chat-avatar">
+                                    <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">
+                                </div>
+                                <div class="chat-action-btns mr-2">
+                                    <div class="chat-action-col">
+                                        <a class="#" href="#" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item dream_profile_menu">Copy <span ><i class="far fa-copy"></i></span></a>
+                                            <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>
+                                            <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>
+                                            <a href="#" class="dropdown-item">Delete <span><i class="far fa-trash-alt"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="chat-read-col">
+                                        <span class="material-icons">done_all</span>                                    
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chats">
+                                <div class="chat-avatar">
+                                    <img src="assets/img/avatar_friends/rachelgreen.jpg" class="rounded-circle dreams_chat" alt="image">
+                                </div>
+                                <div class="chat-content">
+                                    <div class="message-content">
+                                        <div class="download-col">
+                                            <ul>
+                                                <li>
+                                                    <div class="image-download-col">
+                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                            <img src="assets/img/chat-download.jpg" alt="">
+                                                        </a>
+                                                        <div class="download-action d-flex align-items-center">
+                                                            <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>
+                                                            <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="image-download-col image-not-download">
+                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                            <img src="assets/img/chat-download.jpg" alt="">
+                                                        </a>
+                                                        <div class="download-action d-flex align-items-center">
+                                                            <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>
+                                                            <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="image-download-col image-not-download">
+                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                            <img src="assets/img/chat-download.jpg" alt="">
+                                                        </a>
+                                                        <div class="download-action d-flex align-items-center">
+                                                            <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>
+                                                            <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="chat-time">
+                                            <div>
+                                                <div class="time"><i class="fas fa-clock"></i> 10:00</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-profile-name">
+                                        <h6>Rachel Green</h6>
+                                    </div>
+                                </div>
+                                <div class="chat-action-btns ml-3">
+                                    <div class="chat-action-col">
+                                        <a class="#" href="#" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item dream_profile_menu">Copy <span ><i class="far fa-copy"></i></span></a>
+                                            <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>
+                                            <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>
+                                            <a href="#" class="dropdown-item">Delete <span><i class="far fa-trash-alt"></i></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chats chats-right">
+                                <div class="chat-content">
+                                    <div class="message-content">
+                                        <div class="file-download d-flex align-items-center">
+                                            <div class="file-type d-flex align-items-center justify-content-center mr-2">
+                                                <i class="far fa-file-archive"></i>
+                                            </div>
+                                            <div class="file-details">
+                                                <span class="file-name">filename.zip</span>
+                                                <span class="file-size">10.6MB</span>
+                                            </div>
+                                            <div class="download-action d-flex align-items-center">
+                                                <div><a href="#"><i class="fas fa-cloud-download-alt"></i></a></div>
+                                                <div><a href="#"><i class="fas fa-ellipsis-h"></i></a></div>
+                                            </div>
+                                        </div>
+                                        <div class="chat-time">
+                                            <div>
+                                                <div class="time"><i class="fas fa-clock"></i> 10:02</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-profile-name text-right">
+                                        <h6>Me</h6>
+                                    </div>
+                                </div>
+                                <div class="chat-avatar">
+                                    <img src="assets/img/avatar/avatar-12.jpg" class="rounded-circle dreams_chat" alt="image">
+                                </div>
+                                <div class="chat-action-btns mr-2">
+                                    <div class="chat-action-col">
+                                        <a class="#" href="#" data-toggle="dropdown">
+                                            <i class="fas fa-ellipsis-h"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right">
+                                            <a href="#" class="dropdown-item dream_profile_menu">Copy <span ><i class="far fa-copy"></i></span></a>
+                                            <a href="#" class="dropdown-item">Save <span class="material-icons">save</span></a>
+                                            <a href="#" class="dropdown-item">Forward <span><i class="fas fa-share"></i></span></a>
+                                            <a href="#" class="dropdown-item">Delete <span><i class="far fa-trash-alt"></i></span></a>
+                                        </div>
+                                    </div>
+                                    <div class="chat-read-col">
+                                        <span class="material-icons">done_all</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-footer">
+                    <form>
+                        <div class="smile-col">
+                            <a href="#"><i class="far fa-smile"></i></a>
+                        </div>
+                        <div class="attach-col">
+                            <a href="#"><i class="fas fa-paperclip"></i></a>
+                        </div>
+                        <input type="text" class="form-control chat_form" placeholder="Enter Message.....">
+                        <div class="form-buttons">
+                            <button class="btn send-btn" type="submit">
+                                <span class="material-icons">send</span>
+                            </button>
+                        </div>
+                        <div class="specker-col">
+                            <a href="#"><span class="material-icons">settings_voice</span></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- /Chat -->
+
+        
+    <!-- /Main Wrapper -->
+	
+	<!-- jQuery -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+	
+	<!-- Bootstrap Core JS -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+	
+	<!-- Slimscroll JS -->
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Swiper JS -->
+	<script src="assets/plugins/swiper/swiper.min.js"></script>
+
+    <!-- FancyBox JS -->
+    <script src="assets/plugins/fancybox/jquery.fancybox.min.js"></script>
+
+	<!-- Custom JS -->
+    <script src="assets/js/script.js"></script> 
+	
+</body>
+</html>
