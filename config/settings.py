@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pathlib import Path
+import pickle
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,6 +32,10 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', '127.0.0.1:8000']
 
 tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
 model = AutoModelForCausalLM.from_pretrained("bot/static/friends_model")
+# with open('bot/static/friends_model.pickle', 'rb') as f:
+#     model = pickle.load(f)
+# with open('bot/static/friends_tokenizer.pickle', 'rb') as f:
+#     tokenizer = pickle.load(f)
 
 # Application definition
 
