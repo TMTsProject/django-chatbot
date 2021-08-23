@@ -216,6 +216,10 @@
     <div>
         <input type="text" id="inputId" name="inputName" onkeyup="enterkey();">
         <input type="button" onclick="sendAsk()" value="Get Value">
+        <form action="{% url 'clear_history' %}", method="GET">
+            <input type="submit", value="Clear history">
+        </form>
+
     </div>
     <div id="check"></div>
     <div id="chatbox"></div>
