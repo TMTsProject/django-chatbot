@@ -2,4 +2,11 @@
 db.sqlite3
 *.pyc
 __pycache__
-bot/static/
+static/friends_tokenizer
+static/friends_model
+static/DialogRPT_files/restore/depth.pth
+static/DialogRPT_files/restore/human_vs_machine.pth
+static/DialogRPT_files/restore/human_vs_rand.pth
+static/DialogRPT_files/restore/updown.pth
+static/DialogRPT_files/restore/width.pth
+*.pickle

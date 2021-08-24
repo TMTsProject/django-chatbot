@@ -1,0 +1,414 @@
+﻿<!doctype html>
+<html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3.0">
+    <title>miso_main</title>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css"></style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0px solid silver;
+        }
+
+        img {
+            width: 100px;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1rem;
+            color: black;
+            background-color: #e6e6fa; 
+            letter-spacing: 0.1px;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 4rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            line-height: 2.4rem;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            line-height: 1.4rem;
+            margin-bottom: 1.6rem;
+        }
+
+        h4, h5 {
+            font-family: 'Noto Sans KR', serif;
+        }
+
+        h4 {
+            font-size: 1.1rem;
+            line-height: 1.1rem;
+            margin-bottom: 1.6rem;
+        }
+
+        h5 {
+            font-size: 0.7rem;
+            line-height: 0.7rem;
+            margin-bottom: 1.6rem;
+        }
+
+        a:link {
+            color: #666;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: #666;
+        }
+
+        a:hover {
+            color: red;
+        }
+
+        a:active {
+            color: red;
+        }
+
+        .solid {
+            font-size: 4rem;
+            line-height: 2rem;
+            color: #999;
+        }
+        
+        form input{
+            border: none;
+            background: none;
+            text-align: center;
+            outline: none;
+            margin: 5px;
+            color: black;
+            height: 30px;
+            border-radius:10px;
+            transition: 0.2s ease-in;
+        }
+        form input[type="text"]{
+            box-sizing: border-box;
+            background: white;
+            height:35px;
+            width:300px;
+        }
+        form input[type="submit"]{
+            border: solid 2.5px #edb2ed;
+            box-sizing: border-box;
+            width: 60px;
+            height:35px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+            form input[type="submit"]:hover {
+                background: #edb2ed;
+            }
+
+        /*----start----*/
+        /* main */
+        main {
+            position: relative;
+            height: 800px;
+            background: #a598ed;
+            background-size: cover;
+            background-position: center center;
+        }
+
+            main header {
+                position: fixed;
+                background: #7b6ecc;
+                z-index: 999;
+                width: 100%;
+                margin: 0 auto;
+                color: white;
+                text-transform: uppercase;
+                padding: 10px 5%;
+                display: flex;
+                justify-content: space-between;
+                cursor: pointer;
+            }
+
+                main header > div {
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                    line-height: 3rem;
+                }
+
+                    main header > div:hover {
+                        color: pink;
+                    }
+
+                main header nav {
+                    display: flex;
+                    justify-content: space-between;
+                }
+
+                    main header nav a {
+                        padding: 0 20px;
+                        font-size: 1rem;
+                        transition: 0.7s;
+                        line-height: 3rem;
+                    }
+
+                        main header nav a:hover {
+                            background: black;
+                        }
+
+            main article {
+                min-width: 1000px;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                line-height: 3rem;
+                color: #fff;
+            }
+
+
+        /* chanel1 */
+        .chanel1 {
+            width: 1000px;
+            padding: 70px 0;
+            margin: 0 auto;
+        }
+
+            .chanel1:after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+
+            .chanel1 > :first-child {
+                float: left;
+            }
+
+                .chanel1 > :first-child img {
+                    width: 300px;
+                    border-radius: 30px;
+                }
+
+            .chanel1 > :last-child {
+                float: right;
+            }
+
+                .chanel1 > :last-child img {
+                    margin-top: 200px;
+                    width: 400px;
+                    border-radius: 30px;
+                }
+
+
+        /* BTS */
+        .BTS {
+            clear: both;
+            width: 1000px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+        /* chanel2 */
+        .chanel2 {
+            width: 1000px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+            .chanel2 img {
+                width: 500px;
+                border-radius: 30px;
+            }
+
+        /* my page */
+        .mypage {
+            width: 1000px;
+            margin: 100px auto;
+            text-align: center;
+        }
+            .mypage img{
+                width: 500px;
+                border-radius: 30px;
+            }
+
+        /* sign */
+        .sign {
+            width: 1000px;
+            margin: 100px auto;
+            text-align: center;
+        }
+
+
+        footer {
+            background: #9e97cc;
+            padding: 50px;
+        }
+
+            footer > div {
+                width: 1000px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-around;
+            }
+
+            footer div div {
+                width: 100%;
+                padding: 0 20px 0 0;
+            }
+
+            footer h3 {
+                color: lightgrey;
+            }
+
+    </style>
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+            <div onclick="window.location.href='#'">
+                XD Logo
+
+            </div>
+            <nav>
+                <a href="/">XD main</a>
+                <a href="devInfo">개발자 소개</a>
+                <a href="ch1">학습하기</a>
+                <a href="ch2">문제 풀기</a>
+            </nav>
+        </header>
+
+        <article>
+            <h4>미국 드라마 'FRIENDS'로 공부하는 영어 회화</h4>
+            <h1>XD CONTENTS NAME</h1>
+            <p>Friends의 레이첼이 알려주는 실전 영어로 공부해 보세요!</p>
+            <div>
+                <video width="480" controls>
+                    <source src="https://videos.ctfassets.net/8cd2csgvqd3m/jwIHo8C4pdbh2Z96IYyoT/c400db2da73a6cd1393be6cc40746127/15_sek_H9_4K_nographics.mp4" type="video/mp4">
+                </video>
+                <form name="Email" action="값을 보낼 주소" method="post">
+                    <input type='text' name='userEmail' placeholder='XDcontents@mail.com' />
+                    <input type='submit' value='join' />
+                 </form>
+            </div>
+        </article>
+
+    </main>
+
+
+
+    <article class="chanel1">
+        <div>
+            <h2>Friends의 레이첼과 대화해 봅시다!</h2>
+            <span class="solid">―</span><br>
+            <img src="https://i.pinimg.com/474x/54/58/b2/5458b24fb584f147f88cc3c26db20b4a.jpg">
+        </div>
+        <div>
+            <img src="https://web.eggbun.net/images/eggbun_english_chatting_4.png" />
+        </div>
+    </article>
+
+
+
+    <article class="BTS">
+        <h2>인증된 영어 회화 학습</h2>
+        <span class="solid">―</span>
+        <h4>BTS RM의 영어 공부법</h4>
+        <div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/mxTu_xAVIXU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </article>
+
+
+
+    <article class="chanel2">
+
+        <div>
+            <div>
+                <h2>오늘의 영어회화</h2>
+                <span class="solid">―</span>
+            </div>
+            <div>
+                <img src="https://post-phinf.pstatic.net/MjAxOTA3MDJfMjU4/MDAxNTYyMDE4NTA2OTA4.ZZ-qBWjGLyFjgWbCNuTvI6e0Feoz04KHuDt7131msF4g.Bvtq-xbEuMkYefbTzBOMmrswtdbOBN6ByRfRp--qLVYg.PNG/SmartSelectImage_2019-07-02-07-01-14.png?type=w1200">
+            </div>
+        </div>
+    </article>
+
+
+
+    <article class="mypage">
+        <div>
+            <div>
+                <h2>마이 페이지</h2>
+                <span class="solid">―</span>
+                <h4>설명설명설명</h4>
+                추추추추가 설명설명설명 추추추추가 설명설명설명 추추추추가 설명설명설명 추추추추가 설명설명설명<br>&nbsp;<br>
+            </div>
+            <img src="https://mblogthumb-phinf.pstatic.net/MjAyMDAzMjhfMTc4/MDAxNTg1MzYwMTk2NDM0.-AsmbNJGWIDy3apiRt4GXnYvxQxUPjKo6Eien32J1Fcg.yyFjMQVpzKmLRZjxRmhGacfVQ5NYdf2VxzHAooggPfUg.JPEG.chunmiae82/1585360195574.jpg?type=w800">
+        </div>
+    </article>
+
+
+
+    <article class="sign">
+        <div>
+            <h2>XD와 함께</h2>
+            </br>
+            <h2>영어 회화 실력 향상시키기</h2>
+            <span class="solid">―</span>
+        </div>
+        <div>
+            <form name="Email" action="값을 보낼 주소" method="post">
+                <input type='text' name='userEmail' placeholder='XDcontents@mail.com' />
+                <input type='submit' value='join' />
+            </form>
+        </div>
+    </article>
+
+
+    <footer>
+        <div>
+            <div>
+                <h3>START A PROJECT</h3>
+                We are ready for the challenge<br />
+                adobexd@mail.com
+            </div>
+            <div>
+                <h3>SAY HELLO</h3>
+                497 Evergreen Rd. Roseville, CA 95673<br />
+                +44 345 678 903
+            </div>
+            <div>
+                <h3>JOBS</h3>
+                We are always looking for talent<br />
+                adobexd@mail.com
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

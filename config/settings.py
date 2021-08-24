@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from pathlib import Path
+import pickle
+import torch
+
+from static.DialogRPT_files.dialogRPT import getIntegrated
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +34,16 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '127.0.0.1:3000', '127.0.0.1:8000']
 
 tokenizer = AutoTokenizer.from_pretrained('microsoft/DialoGPT-medium')
-model = AutoModelForCausalLM.from_pretrained("bot/static/friends_model")
+model = AutoModelForCausalLM.from_pretrained("static/friends_model")
+
+ranker_path = "static/DialogRPT_files/restore/ensemble.yml"
+generator_path = "static/"
+cuda = True if torch.cuda.is_available() else False
+rachelModel = getIntegrated(ranker_path, generator_path, cuda)
+# with open('static/friends_model.pickle', 'rb') as f:
+#     model = pickle.load(f)
+# with open('static/friends_tokenizer.pickle', 'rb') as f:
+#     tokenizer = pickle.load(f)
 
 # Application definition
 
@@ -128,6 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static/'),
+)
 
 #API의 CORS 오류 해결
 # 배포용은 따로 있음

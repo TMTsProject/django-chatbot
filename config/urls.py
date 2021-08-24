@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    path('', include('bot.basic_urls')),
     path('admin/', admin.site.urls),
     path('chatbot/', include('bot.urls')),
-    path('api-ex/', views.main)
+    path('api-ex/', views.api)
 ]
