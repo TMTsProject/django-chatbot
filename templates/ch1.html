@@ -25,7 +25,9 @@
 
     <!-- App styles -->
     <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
-	
+
+    <link rel="stylesheet" href="{% static 'assets/css/grammar_check.css' %}">
+
 </head>
 
 <body>
@@ -348,7 +350,8 @@
                         <!-- /Chat Search -->
                     </div>
                     <div class="chat-body">
-                        <div class="messages">
+                        <div class="messages" id="messages">
+<!--                            <div id="check"></div>-->
                             <div class="chats">
                                 <div class="chat-avatar">
                                     <img src="{% static 'assets/img/avatar_friends/rachelgreen.jpg' %}" class="rounded-circle dreams_chat" alt="image">
@@ -492,7 +495,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="image-download-col">
-                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                        <a href="{% static 'assets/img/chat-download.jpg' %}" data-fancybox="gallery" class="fancybox">
                                                             <img src="{% static 'assets/img/chat-download.jpg' %}" alt="">
                                                         </a>
                                                         <div class="download-action d-flex align-items-center">
@@ -503,7 +506,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="image-download-col image-not-download">
-                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                        <a href="{% static 'assets/img/chat-download.jpg' %}" data-fancybox="gallery" class="fancybox">
                                                             <img src="{% static 'assets/img/chat-download.jpg' %}" alt="">
                                                         </a>
                                                         <div class="download-action d-flex align-items-center">
@@ -514,7 +517,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="image-download-col image-not-download">
-                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                        <a href="{% static 'assets/img/chat-download.jpg' %}" data-fancybox="gallery" class="fancybox">
                                                             <img src="{% static 'assets/img/chat-download.jpg' %}" alt="">
                                                         </a>
                                                         <div class="download-action d-flex align-items-center">
@@ -595,28 +598,35 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            <div class="chat-line">
+                                <span class="chat-date">Today</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="chat-footer">
-                    <form>
-                        <div class="smile-col">
-                            <a href="#"><i class="far fa-smile"></i></a>
-                        </div>
-                        <div class="attach-col">
-                            <a href="#"><i class="fas fa-paperclip"></i></a>
-                        </div>
-                        <input type="text" class="form-control chat_form" placeholder="Enter Message.....">
-                        <div class="form-buttons">
-                            <button class="btn send-btn" type="submit">
-                                <span class="material-icons">send</span>
-                            </button>
-                        </div>
-                        <div class="specker-col">
-                            <a href="#"><span class="material-icons">settings_voice</span></a>
-                        </div>
-                    </form>
+                    <input type="text" class="form-control chat_form" id="inputId"  name="inputName" onkeyup="enterkey();">
+<!--                    <input type="button" onclick="sendAsk()" value="Get Value">-->
+                    <button class="btn send-btn" onclick="sendAsk()">-->
+                        <span class="material-icons">send</span>
+                    </button>
+<!--                    <form>-->
+<!--                        <div class="smile-col">-->
+<!--                            <a href="#"><i class="far fa-smile"></i></a>-->
+<!--                        </div>-->
+<!--                        <div class="attach-col">-->
+<!--                            <a href="#"><i class="fas fa-paperclip"></i></a>-->
+<!--                        </div>-->
+<!--                        <input type="text" id="inputId" class="form-control chat_form" name="quetext" placeholder="Enter Message.....">-->
+<!--                        <div class="form-buttons">-->
+<!--                            <button class="btn send-btn" type="submit">-->
+<!--                                <span class="material-icons">send</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <div class="specker-col">-->
+<!--                            <a href="#"><span class="material-icons">settings_voice</span></a>-->
+<!--                        </div>-->
+<!--                    </form>-->
                 </div>
             </div>
         </div>
@@ -642,6 +652,9 @@
 
 	<!-- Custom JS -->
     <script src="{% static 'assets/js/script.js' %}"></script>
-	
+
+    <script src="{% static 'assets/js/chat.js' %}"></script>
+
+
 </body>
 </html>

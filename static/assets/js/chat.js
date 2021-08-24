@@ -22,19 +22,32 @@ function enterkey() {
     }
 }
 
+function nowTime(){
+    var today = new Date();
+    var hours = today.getHours(); // 시
+    var minutes = today.getMinutes();  // 분
+    return hours + ' : ' + minutes;
+}
+
 function sendAsk(){
-    <!--  input 받음  -->
+//    <!--  input 받음  -->
     var chattext = $('#inputId').val();
     console.log(chattext)
-    checktxt = "<div class='inp'>"+chattext+"</div>";
-    document.getElementById("check").innerHTML += checktxt;
+    checktxt = '<div class="chats chats-right"><div class="chat-content"><div class="message-content">'
+                + chattext +
+                '<div class="chat-time"><div><div class="time"><i class="fas fa-clock"></i>'
+                 + nowTime() +
+                 '</div></div></div></div><div class="chat-profile-name text-right"><h6>Me</h6></div></div>'
+                 + '<div class="chat-action-btns mr-2"><div class="chat-read-col"><span class="material-icons">done_all</span></div></div></div>'
 
-    <!--   문법 교정 api 작동     -->
+    document.getElementById("messages").innerHTML += checktxt;
+
+//    <!--   문법 교정 api 작동     -->
     var inputs = document.getElementsByClassName("inp")
     var len = inputs.length
 
-    console.log('len : ',len)
-    console.log('inputs : ', inputs)
+//    console.log('len : ',len)
+//    console.log('inputs : ', inputs)
 
     for (var inpIdx = 0; inpIdx < len; inpIdx++){
         // console.log(inputs[inpIdx].innerText)
@@ -129,26 +142,32 @@ function sendAsk(){
     }
 
     <!--    챗봇 대답 요청    -->
+//    var strurl = "chatanswer?questext=" + chattext;
     var strurl = "chatanswer?questext=" + chattext;
     xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4) {
             var data = xhr.responseText;
-
+            console.log(data)
             var obj = JSON.parse(data);
 
             if(obj.flag == "0"){
                 // checker = "<div style='color:red'>" + obj.checker + "<div>"
-                // document.getElementById("check").innerHTML += checker
+                // document.getElementById("messages").innerHTML += checker
 
-                bottext = "<div style='margin:15px 0;text-align:left;'><span style='padding:3px 10px;background-color:#DDD;border-radius:3px;'>" + obj.anstext + "</span></div>";
-                document.getElementById("check").innerHTML += bottext;
+                bottext = '<div class="chats"><div class="chat-avatar"> </div> <div class="chat-content"><div class="message-content">'
+                        + obj.anstext +
+                        '<div class="chat-time"><div><div class="time"><i class="fas fa-clock"></i>'
+                        + nowTime() +
+                        '</div></div></div></div><div class="chat-profile-name"><h6>Rachel Green</h6></div></div></div>'
 
-                var objDiv = document.getElementById("check");
+                document.getElementById("messages").innerHTML += bottext;
+
+                var objDiv = document.getElementById("messages");
                 objDiv.scrollTop = objDiv.scrollHeight;
 
-                document.getElementById("check").value = "";
-                document.getElementById("check").focus();
+                document.getElementById("messages").value = "";
+                document.getElementById("messages").focus();
 
             }
         }
