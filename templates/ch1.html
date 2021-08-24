@@ -25,7 +25,50 @@
 
     <!-- App styles -->
     <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
-	
+
+<!--    <link rel="stylesheet" href="{% static 'assets/css/grammar_check.css' %}">-->
+
+    <style>
+        .gc-tooltip {
+            position: relative;
+            display:inline;
+        }
+
+        .gc-tooltip .gc-tooltiptext {
+            visibility: hidden;       /* 이벤트가 없으면 툴팁 영역을 숨김 */
+            width:max-content;             /* 툴팁 영역의 넓이를 설정 */
+            background-color:#A8C2FF;
+            color: black;
+            text-align: left;
+            border-radius: 6px;
+            padding: 5px 0;
+
+            position: absolute;       /* 절대 위치를 사용 */
+            z-index: 1;
+        }
+
+        .gc-tooltip:hover .gc-tooltiptext {
+            visibility: visible;      /* hover 이벤트 발생시 영역을 보여줌 */
+            top: 130%;               /* 영역의 위치를 -5 만큼 위로 이동 */
+            right: 5%;             /* 왼쪽에 생성해야하므로 영역을 오른쪽에서 105% 이동  */
+            padding: 5px;
+        }
+
+        .gc-tooltip .gc-tooltiptext::after {
+            content: " ";             /* 정사각형 영역 사용 */
+            position: absolute;       /* 절대 위치 사용 */
+            border-style: solid;
+            border-width: 5px;        /* 테두리 넓이를 5px 로 설정 */
+            right: 5px;
+            bottom: 100%;               /* bottom에서 100% 위치에 오도록 위치 */
+            margin-top: -5px;
+
+            /* 사각형의 테두리에서 아래만 노출 */
+            border-color: transparent transparent #A8C2FF transparent;
+
+        }
+
+    </style>
 </head>
 
 <body>
@@ -348,7 +391,8 @@
                         <!-- /Chat Search -->
                     </div>
                     <div class="chat-body">
-                        <div class="messages">
+                        <div class="messages" id="messages">
+<!--                            <div id="check"></div>-->
                             <div class="chats">
                                 <div class="chat-avatar">
                                     <img src="{% static 'assets/img/avatar_friends/rachelgreen.jpg' %}" class="rounded-circle dreams_chat" alt="image">
@@ -445,9 +489,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="chat-line">
-                                <span class="chat-date">Today</span>
-                            </div>
+<!--                            <div class="chat-line">-->
+<!--                                <span class="chat-date">Today</span>-->
+<!--                            </div>-->
                             <div class="chats chats-right">
                                 <div class="chat-content">
                                     <div class="message-content">
@@ -492,7 +536,7 @@
                                             <ul>
                                                 <li>
                                                     <div class="image-download-col">
-                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                        <a href="{% static 'assets/img/chat-download.jpg' %}" data-fancybox="gallery" class="fancybox">
                                                             <img src="{% static 'assets/img/chat-download.jpg' %}" alt="">
                                                         </a>
                                                         <div class="download-action d-flex align-items-center">
@@ -503,7 +547,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="image-download-col image-not-download">
-                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                        <a href="{% static 'assets/img/chat-download.jpg' %}" data-fancybox="gallery" class="fancybox">
                                                             <img src="{% static 'assets/img/chat-download.jpg' %}" alt="">
                                                         </a>
                                                         <div class="download-action d-flex align-items-center">
@@ -514,7 +558,7 @@
                                                 </li>
                                                 <li>
                                                     <div class="image-download-col image-not-download">
-                                                        <a href="assets/img/chat-download.jpg" data-fancybox="gallery" class="fancybox">
+                                                        <a href="{% static 'assets/img/chat-download.jpg' %}" data-fancybox="gallery" class="fancybox">
                                                             <img src="{% static 'assets/img/chat-download.jpg' %}" alt="">
                                                         </a>
                                                         <div class="download-action d-flex align-items-center">
@@ -595,28 +639,47 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                            <div class="chat-line">
+                                <span class="chat-date">Today</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="chat-footer">
                     <form>
-                        <div class="smile-col">
+                        <span class="smile-col">
                             <a href="#"><i class="far fa-smile"></i></a>
-                        </div>
-                        <div class="attach-col">
+                        </span>
+                        <span class="attach-col">
                             <a href="#"><i class="fas fa-paperclip"></i></a>
-                        </div>
-                        <input type="text" class="form-control chat_form" placeholder="Enter Message.....">
-                        <div class="form-buttons">
-                            <button class="btn send-btn" type="submit">
-                                <span class="material-icons">send</span>
-                            </button>
-                        </div>
-                        <div class="specker-col">
-                            <a href="#"><span class="material-icons">settings_voice</span></a>
-                        </div>
+                        </span>
+                        <input hidden="hidden" />
+                        <input type="text" class="form-control chat_form" id="inputId" onkeyup="enterkey();" placeholder="Enter Message......">
+                        <button class="btn send-btn" type="button" onclick="sendAsk();">
+                            <span class="material-icons">send</span>
+                        </button>
+                        <button class="btn grammar-check" type="button" onclick="checkGrammar();" style="color:#5A078B;	font-size: 20px;">
+                            <i class="fas fa-spell-check"></i>
+                        </button>
                     </form>
+
+<!--                    <form>-->
+<!--                        <div class="smile-col">-->
+<!--                            <a href="#"><i class="far fa-smile"></i></a>-->
+<!--                        </div>-->
+<!--                        <div class="attach-col">-->
+<!--                            <a href="#"><i class="fas fa-paperclip"></i></a>-->
+<!--                        </div>-->
+<!--                        <input type="text" id="inputId" class="form-control chat_form" name="quetext" placeholder="Enter Message.....">-->
+<!--                        <div class="form-buttons">-->
+<!--                            <button class="btn send-btn" type="submit">-->
+<!--                                <span class="material-icons">send</span>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <div class="specker-col">-->
+<!--                            <a href="#"><span class="material-icons">settings_voice</span></a>-->
+<!--                        </div>-->
+<!--                    </form>-->
                 </div>
             </div>
         </div>
@@ -642,6 +705,9 @@
 
 	<!-- Custom JS -->
     <script src="{% static 'assets/js/script.js' %}"></script>
-	
+
+    <script src="{% static 'assets/js/chat.js' %}"></script>
+
+
 </body>
 </html>

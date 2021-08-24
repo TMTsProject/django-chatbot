@@ -7,6 +7,9 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 import torch
 import time
 from config import settings
+from datetime import datetime
+from django.utils.dateformat import DateFormat
+
 from . import api
 
 def main(request):
@@ -105,3 +108,9 @@ def clear_history(request):
             print("Session is not cleared.")
             pass
     return redirect('home')
+
+def today(request):
+    """Shows todays current time and date."""
+    today = datetime.datetime.now().strftime("%I:%M%p on %B %d, %Y")
+    context = {'today': today}
+    return render(request, 'ch1.html',context)
