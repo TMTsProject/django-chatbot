@@ -12,6 +12,7 @@ from datetime import datetime
 from django.utils.dateformat import DateFormat
 from static.DialogRPT_files.demo import chat   # for DialogRPT
 
+
 from . import api
 
 def main(request):

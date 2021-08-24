@@ -9,4 +9,3 @@ static/DialogRPT_files/restore/human_vs_machine.pth
 static/DialogRPT_files/restore/human_vs_rand.pth
 static/DialogRPT_files/restore/updown.pth
 static/DialogRPT_files/restore/width.pth
-*.pickle

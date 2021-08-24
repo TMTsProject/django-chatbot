@@ -40,6 +40,7 @@ ranker_path = "static/DialogRPT_files/restore/ensemble.yml"
 generator_path = "static/"
 cuda = True if torch.cuda.is_available() else False
 rachelModel = getIntegrated(ranker_path, generator_path, cuda)
+
 # with open('static/friends_model.pickle', 'rb') as f:
 #     model = pickle.load(f)
 # with open('static/friends_tokenizer.pickle', 'rb') as f:
