@@ -14,3 +14,6 @@ friends_model의 용량이 1.34GB로 크기 때문에 깃허브에는 올리지 
 **--여기서부터 작업하신다면 makemigrations와 migrate하신 후에 작업하셔야 합니다!--**  
 0823 채팅 기록 남도록 수정(아래에 간단하게 설명 달아놨습니다!)  
 https://www.notion.so/21-08-23-b90d7a56ee6440ed9d28cf5a992e6cc3  
+
+0824 DialogRPT 도입 (시작하시기 전에 아래 노션을 꼭 확인해주세요!)  
+https://www.notion.so/21-08-24-0070678a01484c26bd4567b1d33f8771  

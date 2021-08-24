@@ -4,4 +4,8 @@ db.sqlite3
 __pycache__
 static/friends_tokenizer
 static/friends_model
-*.pickle
+static/DialogRPT_files/restore/depth.pth
+static/DialogRPT_files/restore/human_vs_machine.pth
+static/DialogRPT_files/restore/human_vs_rand.pth
+static/DialogRPT_files/restore/updown.pth
+static/DialogRPT_files/restore/width.pth
