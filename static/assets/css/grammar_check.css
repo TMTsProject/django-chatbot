@@ -1,13 +1,13 @@
-.tooltip {
+.gc-tooltip {
     position: relative;
     display:inline;
 }
 
-.tooltip .tooltiptext {
+.gc-tooltip .gc-tooltiptext {
     visibility: hidden;       /* 이벤트가 없으면 툴팁 영역을 숨김 */
     width:max-content;             /* 툴팁 영역의 넓이를 설정 */
     background-color:black;
-    color: #fff;
+    color: #232323;
     text-align: left;
     border-radius: 6px;
     padding: 5px 0;
@@ -16,7 +16,7 @@
     z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+.gc-tooltip:hover .gc-tooltiptext {
     visibility: visible;      /* hover 이벤트 발생시 영역을 보여줌 */
     /* top: -5px;                영역의 위치를 -5 만큼 위로 이동 */
     /* right: 105%;              왼쪽에 생성해야하므로 영역을 오른쪽에서 105% 이동  */
@@ -25,7 +25,7 @@
     left: -10px;
     padding: 5px;
 }
-.tooltip .tooltiptext::after {
+.gc-tooltip .gc-tooltiptext::after {
     content: " ";             /* 정사각형 영역 사용 */
     position: absolute;       /* 절대 위치 사용 */
     border-style: solid;
