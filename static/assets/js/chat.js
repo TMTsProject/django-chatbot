@@ -69,7 +69,7 @@ function sendAsk(){
                 // checker = "<div style='color:red'>" + obj.checker + "<div>"
                 // document.getElementById("messages").innerHTML += checker
 
-                bottext = '<div class="chats"><div class="chat-avatar"> </div> <div class="chat-content"><div class="message-content">'
+                bottext = '<div class="chats"><div class="chat-avatar"><img src="static/assets/img/avatar_friends/rachelgreen.jpg" class="rounded-circle dreams_chat" alt="image">" </div> <div class="chat-content"><div class="message-content">'
                         + obj.anstext +
                         '<div class="chat-time"><div><div class="time"><i class="fas fa-clock"></i>'
                         + nowTime() +
