@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
-
+{% load static %}
 <head>
     <meta charset="utf-8" />
     <title>개발자 소개</title>
@@ -207,15 +207,15 @@
 
 <body>
     <header>
-        <div onclick="window.location.href='#'">
+        <div onclick="window.location.href='/'">
             with Friends
 
         </div>
         <nav>
-            <a href="main.html">main</a>
-            <a href="info_developer.html">개발자 소개</a>
-            <a href="ch1.html">학습하기</a>
-            <a href="ch2.html">문제 풀기</a>
+            <a href="/">main</a>
+            <a href="devInfo">개발자 소개</a>
+            <a href="ch1">학습하기</a>
+            <a href="ch2">문제 풀기</a>
         </nav>
     </header>
 
@@ -231,19 +231,19 @@
         <div>
             <div>
                 <section>
-                    <img src="./assets/img/su.jpeg">
+                    <img src="{% static 'assets/img/su.jpeg' %}">
                     <h3>이수빈</h3>
                     <h4>한국외국어대학교</h4>
                     <h5>lsb9938@naver.com</h5>
                 </section>
                 <section>
-                    <img src="./assets/img/ri.jpeg">
+                    <img src="{% static 'assets/img/ri.jpeg' %}">
                     <h3>김리아</h3>
                     <h4>한국외국어대학교</h4>
                     <h5>marung1212@naver.com</h5>
                 </section>
                 <section>
-                    <img src="./assets/img/mi.jpeg">
+                    <img src="{% static 'assets/img/mi.jpeg' %}">
                     <h3>류미소</h3>
                     <h4>한국외국어대학교</h4>
                     <h5>smilecow97@gmail.com</h5>
@@ -252,13 +252,13 @@
 
             <div>
                 <section>
-                    <img src="./assets/img/meong.jpeg">
+                    <img src="{% static 'assets/img/meong.jpeg' %}">
                     <h3>옥명주</h3>
                     <h4>경북대학교</h4>
                     <h5>dhraudwn@naver.com</h5>
                 </section>
                 <section>
-                    <img src="./assets/img/ho.jpeg">
+                    <img src="{% static 'assets/img/ho.jpeg' %}">
                     <h3>이호재</h3>
                     <h4>한국외국어대학교</h4>
                     <h5>16leehojae@hufs.ac.kr</h5>
