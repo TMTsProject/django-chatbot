@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -11,26 +12,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     
     <!-- myself css -->
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/img/favicon.png">
+    <link rel="icon" href="{% static 'assets/img/favicon.png' %}">
 	
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 	
     <!-- Fontawesome CSS -->
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
-    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
 
     <!-- Swiper CSS -->
-	<link rel="stylesheet" href="assets/plugins/swiper/swiper.min.css">
+	<link rel="stylesheet" href="{% static 'assets/plugins/swiper/swiper.min.css' %}">
 
     <!-- FancyBox CSS -->
-    <link rel="stylesheet" href="assets/plugins/fancybox/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/jquery.fancybox.min.css' %}">
 
     <!-- App styles -->
-    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="{% static 'assets/css/app.css' %}">
 	
 </head>
 
@@ -45,31 +46,31 @@
             <!-- Left Sidebar Menu -->
             <div class="sidebar-menu">
                 <div class="logo-col">
-                    <a href="main.html"><img src="assets/img/logo.png" alt=""></a>
+                    <a href="/"><img src="{% static 'assets/img/logo.png' %}" alt=""></a>
                 </div>
                 <div class="menus-col">
                     <div class="chat-menus">
                         <ul>
                             <li>
-                                <a href="ch1.html" class="chat-unread blue">
+                                <a href="ch1" class="chat-unread blue">
                                     <span class="material-icons">message</span>
                                     <span>학습하기</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="ch2.html" class="chat-unread">
+                                <a href="ch2" class="chat-unread">
                                     <span class="material-icons">library_books</span>
                                     <span>문제풀기</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="info_developer.html" class="chat-unread pink">
+                                <a href="devInfo" class="chat-unread pink">
                                     <span class="material-icons">group</span>
                                     <span>개발자소개</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="main.html" class="chat-unread">
+                                <a href="main" class="chat-unread">
                                     <span class="material-icons">settings</span>
                                     <span>Settings</span>
                                 </a>
@@ -97,14 +98,14 @@
                             </li>
                             <li>
                                 <a href="#" class="chat-profile-icon" data-toggle="dropdown">
-                                    <img src="assets/img/avatar/avatar-13.jpg" alt="">
+                                    <img src="{% static 'assets/img/avatar/avatar-13.jpg' %}" alt="">
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="#" class="dropdown-item dream_profile_menu">Edit Profile <span class="edit-profile-icon"><i class="fas fa-edit"></i></span></a>
                                     <a href="#" class="dropdown-item">Profile <span class="profile-icon-col"><i class="fas fa-id-card-alt"></i></span></a>
-                                    <a href="settings.html" class="dropdown-item">Settings <span class="material-icons">settings</span></a>
-                                    <a href="archived.html" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
-                                    <a href="login-email.html" class="dropdown-item">Logout <span class="material-icons">power_settings_new</span></a>
+                                    <a href="#" class="dropdown-item">Settings <span class="material-icons">settings</span></a>
+                                    <a href="#" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
+                                    <a href="#" class="dropdown-item">Logout <span class="material-icons">power_settings_new</span></a>
                                 </div>
                             </li>
                         </ul>
@@ -119,23 +120,23 @@
             <li class="box1_sb">
                 <div class="contents1">오늘의 공부</div>
                 <div>
-                    <img src="./assets/img/menu.png">
+                    <img src="{% static 'assets/img/menu.png' %}">
                 </div>
             </li>
             <li class="box2_sb">
                 <div class="btn_sb"> 
                     <div class ="btn2_sb">
-                        <img src="./assets/img/bell.png">
+                        <img src="{% static 'assets/img/bell.png' %}">
                     </div>
                     <div class="contents3">알림설정</div>
                 </div>
                 <div class="date">
                     <div class="contents2">8월 27일</div>
                     <div>
-                        <img src="./assets/img/arrow_m.png">
+                        <img src="{% static 'assets/img/arrow_m.png' %}">
                     </div>
                     <div>
-                        <img src="./assets/img/date.png" alt="">
+                        <img src="{% static 'assets/img/date.png' %}" alt="">
                     </div>
                 </div>
             
@@ -159,18 +160,18 @@
               <div class="lbtn">
                 <div class = "lbtn-1">
                   <div>
-                      <img src="./assets/img/sound.png">
+                      <img src="{% static 'assets/img/sound.png' %}">
                   </div>
                   <div class="contents3">전체 듣기</div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                 </div>
                 <div class="lbtn-2">
-                    <img src="./assets/img/mike.png">
+                    <img src="{% static 'assets/img/mike.png' %}">
                 </div>
                 <div class="lbtn-3">
-                    <img src="./assets/img/dot_m.png">
+                    <img src="{% static 'assets/img/dot_m.png' %}">
                 </div>
               </div>
              </div>
@@ -191,13 +192,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
              </div>
@@ -211,13 +212,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
              </div>
@@ -231,13 +232,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
              </div>
@@ -251,13 +252,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
              </div>
@@ -271,13 +272,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
              </div>
@@ -291,13 +292,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
              </div>
@@ -311,13 +312,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
             </div>
@@ -331,13 +332,13 @@
                 </div>
                 <div class="q_content2">
                   <div>
-                      <img src="./assets/img/sound0.png">
+                      <img src="{% static 'assets/img/sound0.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/rotation.png">
+                      <img src="{% static 'assets/img/rotation.png' %}">
                   </div>
                   <div>
-                      <img src="./assets/img/mike.png">
+                      <img src="{% static 'assets/img/mike.png' %}">
                   </div>
                 </div>
             </div>
@@ -501,7 +502,7 @@
                                 </div>
 								<div class="edit-image">
 									<div class="img-edit">
-										<img src="assets/img/avatar/avatar-12.jpg" alt="">
+										<img src="{% static 'assets/img/avatar/avatar-12.jpg' %}" alt="">
 										<a href="javascript:void(0);" class="btn btn-icon btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
 									</div>
 								</div>
@@ -567,7 +568,7 @@
                             <ul class="user-list mt-2">
                                 <li class="user-list-item">
                                     <div class="avatar avatar-online">
-                                        <img src="assets/img/avatar/avatar-1.jpg" class="rounded-circle" alt="image">
+                                        <img src="{% static 'assets/img/avatar/avatar-1.jpg' %}" class="rounded-circle" alt="image">
                                     </div>
                                     <div class="users-list-body align-items-center">
                                         <div>
@@ -583,7 +584,7 @@
                                 </li>
                                 <li class="user-list-item">
                                     <div class="avatar avatar-online">
-                                        <img src="assets/img/avatar/avatar-2.jpg" class="rounded-circle" alt="image">
+                                        <img src="{% static 'assets/img/avatar/avatar-2.jpg' %}" class="rounded-circle" alt="image">
                                     </div>
                                     <div class="users-list-body align-items-center">
                                         <div>
@@ -602,7 +603,7 @@
                             <ul class="user-list mt-2">
                                 <li class="user-list-item">
                                     <div class="avatar avatar-online">
-                                        <img src="assets/img/avatar/avatar-3.jpg" class="rounded-circle" alt="image">
+                                        <img src="{% static 'assets/img/avatar/avatar-3.jpg' %}" class="rounded-circle" alt="image">
                                     </div>
                                     <div class="users-list-body align-items-center">
                                         <div>
@@ -618,7 +619,7 @@
                                 </li>
                                 <li class="user-list-item">
                                     <div class="avatar avatar-online">
-                                        <img src="assets/img/avatar/avatar-4.jpg" class="rounded-circle" alt="image">
+                                        <img src="{% static 'assets/img/avatar/avatar-4.jpg' %}" class="rounded-circle" alt="image">
                                     </div>
                                     <div class="users-list-body align-items-center">
                                         <div>
@@ -665,7 +666,7 @@
                             <div class="call-wrapper">
                                 <div class="call-inner">
                                     <div class="call-user">
-                                        <img alt="User Image" src="assets/img/avatar/avatar-8.jpg" class="call-avatar">
+                                        <img alt="User Image" src="{% static 'assets/img/avatar/avatar-8.jpg' %}" class="call-avatar">
                                         <h4>Brietta Blogg <span>video calling</span>
                                         </h4>
                                     </div>
@@ -695,7 +696,7 @@
                             <div class="call-wrapper">
                                 <div class="call-inner">
                                     <div class="call-user">
-                                        <img alt="User Image" src="assets/img/avatar/avatar-8.jpg" class="call-avatar">
+                                        <img alt="User Image" src="{% static 'assets/img/avatar/avatar-8.jpg' %}" class="call-avatar">
                                         <h4>Brietta Blogg <span>voice calling</span>
                                         </h4>
                                     </div>
@@ -720,23 +721,23 @@
     <!-- /Main Wrapper -->
 	
 	<!-- jQuery -->
-    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="{% static 'assets/js/jquery-3.5.1.min.js' %}"></script>
 	
 	<!-- Bootstrap Core JS -->
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
 	
 	<!-- Slimscroll JS -->
-    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
 
     <!-- Swiper JS -->
-	<script src="assets/plugins/swiper/swiper.min.js"></script>
+	<script src="{% static 'assets/plugins/swiper/swiper.min.js' %}"></script>
 
     <!-- FancyBox JS -->
-    <script src="assets/plugins/fancybox/jquery.fancybox.min.js"></script>
+    <script src="{% static 'assets/plugins/fancybox/jquery.fancybox.min.js' %}"></script>
 
 	<!-- Custom JS -->
-    <script src="assets/js/script.js"></script>
+    <script src="{% static 'assets/js/script.js' %}"></script>
 	
 </body>
 </html>
