@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dreams Chat - Html Template</title>
+    <title>문제 풀기</title>
 	
     <!-- myself css -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
@@ -51,19 +51,19 @@
                             <li>
                                 <a href="ch1" class="chat-unread blue">
                                     <span class="material-icons">message</span>
-                                    <span>Chats</span>
+                                    <span>학습하기</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="ch2" class="chat-unread">
                                     <span class="material-icons">library_books</span>
-                                    <span>Grammar</span>
+                                    <span>문제풀기</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="devInfo" class="chat-unread pink">
                                     <span class="material-icons">group</span>
-                                    <span>Mypage</span>
+                                    <span>개발자소개</span>
                                 </a>
                             </li>
                             <li>
@@ -100,9 +100,9 @@
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a href="#" class="dropdown-item dream_profile_menu">Edit Profile <span class="edit-profile-icon"><i class="fas fa-edit"></i></span></a>
                                     <a href="#" class="dropdown-item">Profile <span class="profile-icon-col"><i class="fas fa-id-card-alt"></i></span></a>
-                                    <a href="settings.html" class="dropdown-item">Settings <span class="material-icons">settings</span></a>
-                                    <a href="archived.html" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
-                                    <a href="login-email.html" class="dropdown-item">Logout <span class="material-icons">power_settings_new</span></a>
+                                    <a href="/" class="dropdown-item">Settings <span class="material-icons">settings</span></a>
+                                    <a href="/" class="dropdown-item">Archived <span class="material-icons">flag</span></a>
+                                    <a href="/" class="dropdown-item">Logout <span class="material-icons">power_settings_new</span></a>
                                 </div>
                             </li>
                         </ul>
@@ -111,13 +111,9 @@
             </div>
             <!-- /Left Sidebar Menu -->
             
-
-
-
-
             <!--content group -->
-                <!-- nav end -->
-        <ul class="header">
+        <!--first-contents-->
+        <ul class="header_sb">
             <li class="box1_sb">
                 <div class="contents1">오늘의 공부</div>
                 <div>
@@ -127,16 +123,18 @@
             <li class="box2_sb">
                 <div class="btn_sb"> 
                     <div class ="btn2_sb">
-                        <img src="{% static 'assets/img/bell.png' %}" alt="종">
+                        <img src="{% static 'assets/img/bell.png' %}">
                     </div>
                     <div class="contents3">알림설정</div>
                 </div>
                 <div class="date">
                     <div class="contents2">8월 20일</div>
                     <div>
-                        <img src="{% static 'assets/img/menu.png' %}" alt="">
+                        <img src="{% static 'assets/img/arrow_m.png' %}">
                     </div>
-                    <div class="i">icon2</div>
+                    <div>
+                        <img src="{% static 'assets/img/date.png' %}" alt="">
+                    </div>
                 </div>
             
             </li>
@@ -145,7 +143,254 @@
                 <div class="contents2">영어회화 퀴즈</div>
             </li>
         </ul>
-            
+
+        <!-- second-contents -->
+        <!-- main_text0 -->
+        <div class = "last">
+            <div class="main_text0">
+              <div class="contents1">Your guess is as good as mine.</div>
+              <div class="contents3"> 모르기는 저도 마찬가지예요.</div>
+              <div class="lbtn">
+                <div class = "lbtn-1">
+                  <div>
+                      <img src="{% static 'assets/img/sound.png' %}">
+                  </div>
+                  <div class="contents3">전체 듣기</div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                </div>
+                <div class="lbtn-2">
+                    <img src="{% static 'assets/img/mike.png' %}">
+                </div>
+                <div class="lbtn-3">
+                    <img src="{% static 'assets/img/dot_m.png' %}">
+                </div>
+              </div>
+            </div>
+      
+            <div class="quiz">
+              <div class="quiz_title">
+                <div class="contents2">모두</div>
+                <div class="contents2">회화</div>
+                <div class="contents2">해석</div>
+              </div>
+              <div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div>
+              <div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div><div class="quiz_contents">
+                <div class="q_content1">
+                  <div class="i"></div>
+                  <div class="contents2">Any idea why Ms.Harrison called an urgent meeting?</div>
+                </div>
+                <div class="q_content2">
+                  <div>
+                      <img src="{% static 'assets/img/sound0.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/rotation.png' %}">
+                  </div>
+                  <div>
+                      <img src="{% static 'assets/img/mike.png' %}">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+
+
+
         <!-- /Content -->
 
         <!-- Add Contact -->

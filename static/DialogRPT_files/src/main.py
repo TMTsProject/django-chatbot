@@ -48,26 +48,26 @@ class Option:
             f.write('\n'.join(lines))
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('task', type=str)
-    parser.add_argument('--data', type=str)
-    parser.add_argument('--batch', type=int, default=256)
-    parser.add_argument('--vali_size', type=int, default=1024)
-    parser.add_argument('--vali_print', type=int, default=10)
-    parser.add_argument('--lr', type=float, default=3e-5)
-    parser.add_argument('--path_load','-p', type=str)
-    parser.add_argument('--cpu', action='store_true')
-    parser.add_argument('--max_seq_len', type=int, default=50)
-    parser.add_argument('--mismatch', action='store_true')
-    parser.add_argument('--min_score_gap', type=int)
-    parser.add_argument('--min_rank_gap', type=float)
-    parser.add_argument('--max_hr_gap', type=float, default=1)
-    args = parser.parse_args()
+# if __name__ == "__main__":
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument('task', type=str)
+#     parser.add_argument('--data', type=str)
+#     parser.add_argument('--batch', type=int, default=256)
+#     parser.add_argument('--vali_size', type=int, default=1024)
+#     parser.add_argument('--vali_print', type=int, default=10)
+#     parser.add_argument('--lr', type=float, default=3e-5)
+#     parser.add_argument('--path_load','-p', type=str)
+#     parser.add_argument('--cpu', action='store_true')
+#     parser.add_argument('--max_seq_len', type=int, default=50)
+#     parser.add_argument('--mismatch', action='store_true')
+#     parser.add_argument('--min_score_gap', type=int)
+#     parser.add_argument('--min_rank_gap', type=float)
+#     parser.add_argument('--max_hr_gap', type=float, default=1)
+#     args = parser.parse_args()
 
-    opt = Option(args)
-    master = Master(opt)
-    if args.task == 'train':
-        master.train()
-    elif args.task == 'vali':
-        master.vali()
+#     opt = Option(args)
+#     master = Master(opt)
+#     if args.task == 'train':
+#         master.train()
+#     elif args.task == 'vali':
+#         master.vali()

@@ -193,41 +193,41 @@ def test(model, path_in, wt_ranker, params, max_n):
 
 MODEL_PATH = "/static/"
 
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('task', type=str)
-    parser.add_argument('--path_generator', '-pg', type=str, default=MODEL_PATH)
-    parser.add_argument('--path_ranker', '-pr', type=str)
-    parser.add_argument('--path_test', type=str)
-    parser.add_argument('--cpu', action='store_true')
-    parser.add_argument('--sampling', action='store_true')
-    parser.add_argument('--topk', type=int, default=3)
-    parser.add_argument('--beam', type=int, default=3)
-    parser.add_argument('--wt_ranker', type=float, default=1.)
-    parser.add_argument('--topp', type=float, default=0.8)
-    parser.add_argument('--max_n', type=int, default=-1)
-    parser.add_argument('--temperature', type=float, default=0.5)
-    parser.add_argument('--n_hyp', type=int, default=10)
-    args = parser.parse_args()
+# if __name__ == "__main__":
+#     import argparse
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument('task', type=str)
+#     parser.add_argument('--path_generator', '-pg', type=str, default=MODEL_PATH)
+#     parser.add_argument('--path_ranker', '-pr', type=str)
+#     parser.add_argument('--path_test', type=str)
+#     parser.add_argument('--cpu', action='store_true')
+#     parser.add_argument('--sampling', action='store_true')
+#     parser.add_argument('--topk', type=int, default=3)
+#     parser.add_argument('--beam', type=int, default=3)
+#     parser.add_argument('--wt_ranker', type=float, default=1.)
+#     parser.add_argument('--topp', type=float, default=0.8)
+#     parser.add_argument('--max_n', type=int, default=-1)
+#     parser.add_argument('--temperature', type=float, default=0.5)
+#     parser.add_argument('--n_hyp', type=int, default=10)
+#     args = parser.parse_args()
 
-    cuda = False if args.cpu else torch.cuda.is_available()
-    generator = GPT2Generator(args.path_generator, cuda)
-    if args.sampling:
-        params = {'temperature': args.temperature, 'n_hyp': args.n_hyp}
-        generator.predict = generator.predict_sampling
-    else:
-        params = {'topk': args.topk, 'beam': args.beam, 'topp': args.topp}
-        generator.predict = generator.predict_beam
+#     cuda = False if args.cpu else torch.cuda.is_available()
+#     generator = GPT2Generator(args.path_generator, cuda)
+#     if args.sampling:
+#         params = {'temperature': args.temperature, 'n_hyp': args.n_hyp}
+#         generator.predict = generator.predict_sampling
+#     else:
+#         params = {'topk': args.topk, 'beam': args.beam, 'topp': args.topp}
+#         generator.predict = generator.predict_beam
 
-    if args.path_ranker is None:
-        model = generator
-    else:
-        from score import get_model
-        ranker = get_model(args.path_ranker, cuda)
-        model = Integrated(generator, ranker)
+#     if args.path_ranker is None:
+#         model = generator
+#     else:
+#         from score import get_model
+#         ranker = get_model(args.path_ranker, cuda)
+#         model = Integrated(generator, ranker)
 
-    if args.task == 'play':
-        model.play(args.wt_ranker, params)
-    elif args.task == 'test':
-        test(model, args.path_test, params, args.max_n)
+#     if args.task == 'play':
+#         model.play(args.wt_ranker, params)
+#     elif args.task == 'test':
+#         test(model, args.path_test, params, args.max_n)

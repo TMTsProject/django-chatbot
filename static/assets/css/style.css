@@ -10,7 +10,7 @@
 
 /* text */
 .contents1{
-  font-size: 20px;
+  font-size: 23px;
 	font-weight: 700;
 	text-transform: uppercase;
 	color: #4B0973;
@@ -25,6 +25,17 @@
   font-size:15px;
   font-weight: lighter;
   color: #4B0973;
+}
+
+
+.i{
+  width: 30px;
+  height: 30px;
+  /* margin-top: 3px; */
+  background-color:#6f42c1;
+  cursor: pointer;
+  border-radius: 40px;
+  font-size: 10px;
 }
 
 
@@ -86,17 +97,22 @@
   color: #555;
 }
  */
-
-/* header */
-.header{
-  width: 100%;
-  height: 250px;
-  background: #f1f0fc;
+.main-wrapper > .content{
   display: flex;
   flex-direction: column;
 }
 
-.header > li{
+/* first-contents */
+.header_sb{
+  width: 100%;
+  height: 150px;
+  background: #e8e6fc;
+  /* background: #f1f0fc; */
+  display: flex;
+  flex-direction: column;
+}
+
+.header_sb > li{
   flex:1;
 }
 
@@ -106,7 +122,7 @@
   display: flex;
 }
 .box1_sb > div{
-  margin: 5px auto;
+  margin: 20px auto;
 }
 
 .box1_sb > .contents1{
@@ -122,15 +138,7 @@
   height: 20px;
   margin-right:20px;
   float:right;
-}
-.i{
-  width: 25px;
-  height: 25px;
-  /* margin-top: 3px; */
-  background-color:cornsilk;
   cursor: pointer;
-  border-radius: 40px;
-  font-size: 10px;
 }
 
 .btn_sb{
@@ -152,8 +160,8 @@
   margin-left: 5px;
   margin-bottom: 2px;
   /* border: 1px solid red; */
-  width : 90%;
-  height: 70%;
+  width : 20px;
+  height: 20px;
   /* float: right; */
 }
 
@@ -172,17 +180,22 @@
 .box2_sb > .date > div{
   margin:3px 5px;
 }
+.box2_sb > .date > div > img:last-child{
+  margin-left: 20px;
+}
 .box2_sb > .date > div > img{
   font-size: 1px;
   /* border: 1px solid red; */
-  width : 15px;
-  height: 15px;
+  width : 20px;
+  height: 20px;
+  cursor: pointer;
 }
 
 .box3_sb{
   display: flex;
   margin-left:20px ;
   margin-top: 10px;
+  margin-bottom: 30px;
 }
 .box3_sb > div:first-child{
   height:25px;
@@ -199,11 +212,17 @@
 } 
 
 
+
+
+/* second-contents */
+
 /* main_text0 */
-/* .last{
-  height: 700px;
-  margin-left:200px;
-  background: #7fc4fd;
+.last{
+  position: relative;
+  top: -16px;
+  width: 100%;
+  height:100%;
+  background: #F4F4FA;
 }
 .main_text0{
   width:800px;
@@ -225,7 +244,7 @@
 }
 
 .lbtn-1{
-  width: 145px;
+  width: 150px;
   height:36px; 
   text-align: center;
   line-height: 36px;
@@ -233,56 +252,119 @@
   border: 1px solid;
   border-radius: 40px;
   display: flex;
-  color: white;
+  color: #6f42c1;
   margin-left: 35%;
 }
 
-.lbtn-1 > .i {
-  margin-left: 5px;
-}
 .lbtn-1 > .contents3{
   height:35px;
   text-align: center;
-  border-right:1px solid #fff;
+  margin-left: 7px;
+  padding-right:12px;
+  border-right:1px solid #6f42c1;
   padding-right: 3px;
   cursor: pointer;
 }
-.lbtn > .mike{
-  width:36px;
-  height:36px;
+.lbtn-1 > div > img{
+  margin-left: 7px;
+  font-size: 1px;
+  /* border: 1px solid red; */
+  width : 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.lbtn > .lbtn-2> img{
+  width:35px;
+  height:35px;
+  padding:5px;
   margin-left: 20px;
   cursor:pointer;
   border:1px solid;
   border-radius: 40px;
-  color:white;
+  color:#6f42c1;
   font-size:5px;
   text-align: center;
 }
-
-.lbtn > .i{
-  margin-left: 260px;
-  display: flex;
-  justify-content: flex-end;
+.lbtn > .lbtn-3 > img{
+  width:20px;
+  height:20px;
+  margin-top: 10px;
+  margin-left:300px;
 }
+
 
 .quiz{
   width:800px;
-  height: 250px;
+  height: 450px;
   margin: auto;
   background:#ffffff;
-  border: 1px solid #2a99fb;
+  border: 1px solid #6f42c1;
   position:relative;
   top:-50px;
+  overflow:auto;
 }
 
-.bar{
-  display:flex;
-  border-bottom: 2px solid #2a99fb;
-}
-.bar > div{
+.quiz_title{
+  width: 800px;
   margin: auto;
+  display:flex;
+  border-bottom: 2px solid #6f42c1;
 }
 
-.bar > div:not(:last-child){
-  border-right: 1px solid #2a99fb;
-} */
+.quiz_title > div{
+  flex:1;
+  height: 30px;
+  margin: 5px auto;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.quiz_title > div:not(:last-child){
+  border-right: 1px solid #6f42c1;
+  /* margin: 10px; */
+}
+
+.quiz_contents{
+  width: 100%;
+  height: 80px;
+  border-bottom: 1px solid #6f42c1;
+}
+.quiz_contents > .q_content1 {
+  display: flex;
+  margin-left: 20px;
+  padding-top:10px;
+  padding-bottom: 5px;
+}
+.q_content1 > .contents2{
+  margin-left: 20px;
+}
+
+.quiz_contents > .q_content2{
+  display: flex;
+  margin-left: 40px;
+}
+
+.q_content2 {
+  width: 100px;
+  height: 30px;
+  border:1px solid #6f42c1;
+  border-radius: 40px;
+  display: flex;
+}
+.q_content2 > div > img{
+  margin-left:5px;
+  /* border: 1px solid red; */
+  width : 20px;
+  height: 20px;
+  cursor: pointer;
+  flex:1;
+  line-height: 36px;
+  padding-top: 5px;
+}
+
+.q_content2 > div:not(:last-child){
+  border-right: 1px solid #6f42c1;
+  padding-right:6px;
+  height: 29px;
+}

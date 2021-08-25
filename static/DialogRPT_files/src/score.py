@@ -247,39 +247,39 @@ def play(model, max_cxt_turn=None):
             print('score = %.3f'%score[0])
 
 
-if __name__ == "__main__":
-    import argparse
-    parser = argparse.ArgumentParser()
-    parser.add_argument('task', type=str)
-    parser.add_argument('--data', type=str)
-    parser.add_argument('--max_cxt_turn', type=int, default=2)
-    parser.add_argument('--path_pth', '-p', type=str)
-    parser.add_argument('--cpu', action='store_true')
-    parser.add_argument('--max_n', type=int, default=5000)
-    parser.add_argument('--min_score_gap', type=int)
-    parser.add_argument('--min_rank_gap', type=float)
-    args = parser.parse_args()
+# if __name__ == "__main__":
+#     import argparse
+#     parser = argparse.ArgumentParser()
+#     parser.add_argument('task', type=str)
+#     parser.add_argument('--data', type=str)
+#     parser.add_argument('--max_cxt_turn', type=int, default=2)
+#     parser.add_argument('--path_pth', '-p', type=str)
+#     parser.add_argument('--cpu', action='store_true')
+#     parser.add_argument('--max_n', type=int, default=5000)
+#     parser.add_argument('--min_score_gap', type=int)
+#     parser.add_argument('--min_rank_gap', type=float)
+#     args = parser.parse_args()
 
-    cuda = False if args.cpu else torch.cuda.is_available()
-    if args.task != 'stats':
-        model = get_model(args.path_pth, cuda)
+#     cuda = False if args.cpu else torch.cuda.is_available()
+#     if args.task != 'stats':
+#         model = get_model(args.path_pth, cuda)
         
-    if args.task in ['eval_human_vs_rand', 'eval_human_vs_machine']:
-        fake = args.task.split('_')[-1]
-        eval_fake(args.data, model, fake, max_n=args.max_n, max_cxt_turn=args.max_cxt_turn)
+#     if args.task in ['eval_human_vs_rand', 'eval_human_vs_machine']:
+#         fake = args.task.split('_')[-1]
+#         eval_fake(args.data, model, fake, max_n=args.max_n, max_cxt_turn=args.max_cxt_turn)
 
-    elif args.task == 'eval_human_feedback':
-        eval_feedback(args.data, model, max_cxt_turn=args.max_cxt_turn, 
-            min_rank_gap=args.min_rank_gap, max_n=args.max_n, min_score_gap=args.min_score_gap)
+#     elif args.task == 'eval_human_feedback':
+#         eval_feedback(args.data, model, max_cxt_turn=args.max_cxt_turn, 
+#             min_rank_gap=args.min_rank_gap, max_n=args.max_n, min_score_gap=args.min_score_gap)
 
-    elif args.task == 'test':
-        rank_hyps(args.data, model, max_n=args.max_n, max_cxt_turn=args.max_cxt_turn)
+#     elif args.task == 'test':
+#         rank_hyps(args.data, model, max_n=args.max_n, max_cxt_turn=args.max_cxt_turn)
 
-    elif args.task == 'play':
-        play(model, max_cxt_turn=args.max_cxt_turn)
+#     elif args.task == 'play':
+#         play(model, max_cxt_turn=args.max_cxt_turn)
 
-    elif args.task == 'stats':
-        read_ranked_jsonl(args.data)
+#     elif args.task == 'stats':
+#         read_ranked_jsonl(args.data)
 
-    else:
-        raise ValueError
+#     else:
+#         raise ValueError
