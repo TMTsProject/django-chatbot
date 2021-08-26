@@ -120,7 +120,7 @@
   width: 100%;
   height: 150px;
   background: #e8e6fc;
-  /* background: #f1f0fc; */
+  /* background: red; */
   display: flex;
   flex-direction: column;
 }
@@ -389,7 +389,7 @@
   width:100%;
   height:600px;
   background:#F4F4FA;
-  padding-top:80px;
+  padding-top:2000000px;
 }
 
 

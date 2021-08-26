@@ -1,5 +1,6 @@
 ﻿<!doctype html>
 <html lang="ko" xmlns="http://www.w3.org/1999/xhtml">
+{% load static %}
 
 <head>
     <meta charset="UTF-8">
@@ -306,7 +307,8 @@
             <p>레이첼이 알려주는 실전 영어로 공부해 보세요!</p>
             <div>
                 <video width="480" controls>
-                    <source src="https://videos.ctfassets.net/8cd2csgvqd3m/jwIHo8C4pdbh2Z96IYyoT/c400db2da73a6cd1393be6cc40746127/15_sek_H9_4K_nographics.mp4" type="video/mp4">
+                    <!-- <source src="https://videos.ctfassets.net/8cd2csgvqd3m/jwIHo8C4pdbh2Z96IYyoT/c400db2da73a6cd1393be6cc40746127/15_sek_H9_4K_nographics.mp4" type="video/mp4"> -->
+                    <source src="{% static 'assets/img/vid1.mp4' %}" type="video/mp4">
                 </video>
                 <form name="Email" action="값을 보낼 주소" method="post">
                     <input type='text' name='userEmail' placeholder='XDcontents@mail.com' />
@@ -326,7 +328,7 @@
             <img src="https://i.pinimg.com/474x/54/58/b2/5458b24fb584f147f88cc3c26db20b4a.jpg">
         </div>
         <div>
-            <img src="https://web.eggbun.net/images/eggbun_english_chatting_4.png" />
+            <img src="{% static 'assets/img/chat_screenshot.PNG' %}" />
         </div>
     </article>
 
@@ -352,7 +354,7 @@
                 <span class="solid">―</span>
             </div>
             <div>
-                <img src="https://post-phinf.pstatic.net/MjAxOTA3MDJfMjU4/MDAxNTYyMDE4NTA2OTA4.ZZ-qBWjGLyFjgWbCNuTvI6e0Feoz04KHuDt7131msF4g.Bvtq-xbEuMkYefbTzBOMmrswtdbOBN6ByRfRp--qLVYg.PNG/SmartSelectImage_2019-07-02-07-01-14.png?type=w1200">
+                <img src="{% static 'assets/img/today_screenshot.jpg' %}">
             </div>
         </div>
     </article>
