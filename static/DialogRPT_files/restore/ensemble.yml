@@ -9,9 +9,9 @@ prior:
     wt: 0.5
     path: static/DialogRPT_files/restore/human_vs_rand.pth
 
-  - name: human_vs_machine
-    wt: 0.5
-    path: static/DialogRPT_files/restore/human_vs_machine.pth
+  # - name: human_vs_machine
+  #   wt: 0.5
+  #   path: static/DialogRPT_files/restore/human_vs_machine.pth
 
 cond:
 
@@ -19,10 +19,10 @@ cond:
     wt: 1
     path: static/DialogRPT_files/restore/updown.pth
 
-  - name: depth
-    wt: 0.48
-    path: static/DialogRPT_files/restore/depth.pth
+  # - name: depth
+  #   wt: 0.48
+  #   path: static/DialogRPT_files/restore/depth.pth
 
-  - name: width
-    wt: -0.5
-    path: static/DialogRPT_files/restore/width.pth
+  # - name: width
+  #   wt: -0.5
+  #   path: static/DialogRPT_files/restore/width.pth
