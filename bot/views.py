@@ -56,7 +56,7 @@ def chatanswer(request):
             request.session['instance'] = 0
             request.session['chat_history'] = ""
             print(f"History cleared! Instance: {request.session['instance']}, History: {request.session['chat_history']}")
-            return "History cleared."
+            return "System: History cleared."
         
         # demo.py의 chat함수 호출
         answer, chat_history_from_demo = chat(params, rachelModel, user_input_text, chat_history=chat_history, instance=instance)
