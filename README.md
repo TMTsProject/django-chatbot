@@ -4,11 +4,13 @@ This is a repository for storing codes for the main project of Data on Air 2021 
 
 Our team created an open domain chatbot which reflects a persona of someone, by having the chatbot train to imitate the utterances of him/her.  
 
-Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT** as a baseline model, but have integrated **DialogRPT** approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code was used for DialoGPT and DialogRPT modeling.
+Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT** as a baseline model, but have integrated **DialogRPT** approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code was used for DialoGPT and DialogRPT modeling.  
+
+When it comes to the "learning" part, we implemented an api from [LanguageTool](https://languagetool.org/). We linked the message that the user would type to LanguageTool in order to check whether there are spelling or grammatical errors in the user's text.  
 
 I was responsible for data gathering, pre-processing, analyzing the modeling techniques we were to implement by examining the Hugginface Github repository, modeling the chatbots, and back-end related tasks during deploying via **Django**.
 
-This repository generally stores everything including the Django codes, but the trained models (trained DialoGPT models) and the baseline DialogRPT models are missing, due to a storage limit.
+This repository generally stores everything including the Django codes, but the trained models (trained DialoGPT models) and the baseline DialogRPT models are missing, due to a storage limit. Please refer [here](https://www.notion.so/nokomon/aae788a23cab4c5882beef2af11370a1#9f33f8bd79614c2eb19b31b55a745b6c) for a demonstration video of our project.
 
 -----------------------------------
 # 개발 로그  
