@@ -1,3 +1,18 @@
+# Building a Platform for Learning English with a Persona-applied Chatbot through DialoGPT and DialogRPT
+
+This is a repository for storing codes for the main project of Data on Air 2021 (데이터 청년 캠퍼스 2021).  
+
+Our team created an open domain chatbot which reflects a persona of someone, by having the chatbot train to imitate the utterances of him/her.  
+
+Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT** as a baseline model, but have integrated **DialogRPT** approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code ****was used for DialoGPT and DialogRPT modeling.
+
+I was responsible for data gathering, pre-processing, analyzing the modeling techniques we were to implement by examining the Hugginface Github repository, modeling the chatbots, and back-end related tasks during deploying via **Django**.
+
+This repository generally stores everything including the Django codes, but the trained models (trained DialoGPT models) and the baseline DialogRPT models are missing, due to a storage limit.
+
+-----------------------------------
+# 개발 로그  
+
 ## static 폴더 없음
 static 폴더의 friends_model, friends_tokenizer에서  
 friends_model의 용량이 1.34GB로 크기 때문에 깃허브에는 올리지 않음.
