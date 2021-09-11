@@ -1,6 +1,6 @@
 # Building a Platform for Learning English with a Persona-applied Chatbot through DialoGPT and DialogRPT
 
-This is a repository for storing codes for the main project of Data on Air 2021 (데이터 청년 캠퍼스 2021).  
+This is a repository for storing codes for the main project of Data on Air 2021 ([데이터 청년 캠퍼스 2021](https://dataonair.or.kr/bigjob/)).  
 
 Our team created an open domain chatbot which reflects a persona of someone, by having the chatbot train to imitate the utterances of him/her.  
 
