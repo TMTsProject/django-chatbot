@@ -5,7 +5,7 @@ This is a repository for storing codes for the main project of Data on Air 2021 
 Our team created an open domain chatbot which reflects a persona of someone, by having the chatbot train to imitate the utterances of him/her.  
 
 ### Background and Modeling  
-Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT** as a baseline model, but have integrated **DialogRPT** approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code was used for DialoGPT and DialogRPT modeling.  
+Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT**[[1]](#1) as a baseline model, but have integrated **DialogRPT**[[2]](#2) approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code was used for DialoGPT and DialogRPT modeling.  
 
 
 ### How the User "Learns" from the Chatbot  
@@ -16,6 +16,13 @@ When it comes to the "learning" part, we implemented an api from [LanguageTool](
 I was responsible for data gathering, pre-processing, analyzing the modeling techniques we were to implement by examining the Hugginface Github repository, modeling the chatbots, and back-end related tasks during deploying via **Django**.
 
 This repository generally stores everything including the Django codes, but the trained models (trained DialoGPT models) and the baseline DialogRPT models are missing, due to a storage limit. Please refer [here](https://www.notion.so/nokomon/aae788a23cab4c5882beef2af11370a1#9f33f8bd79614c2eb19b31b55a745b6c) for a demonstration video of our project.
+
+### References
+<a id="1">[1]</a> 
+Zhang, Y., et al. (2019). DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation. arXiv:1911.00536 [cs], arXiv.org, https://arxiv.org/abs/1911.00536.
+
+<a id="2">[2]</a> 
+Gao, X. et al. (2020). Dialogue Response Ranking Training with Large-Scale Human Feedback Data. arXiv:2009.06978 [cs], arXiv.org, https://arxiv.org/abs/2009.06978
 
 -----------------------------------
 # 개발 로그  
