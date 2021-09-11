@@ -4,7 +4,7 @@ This is a repository for storing codes for the main project of Data on Air 2021 
 
 Our team created an open domain chatbot which reflects a persona of someone, by having the chatbot train to imitate the utterances of him/her.  
 
-Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT** as a baseline model, but have integrated **DialogRPT** approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code ****was used for DialoGPT and DialogRPT modeling.
+Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT** as a baseline model, but have integrated **DialogRPT** approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code was used for DialoGPT and DialogRPT modeling.
 
 I was responsible for data gathering, pre-processing, analyzing the modeling techniques we were to implement by examining the Hugginface Github repository, modeling the chatbots, and back-end related tasks during deploying via **Django**.
 
