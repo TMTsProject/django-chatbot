@@ -284,7 +284,7 @@ DialogRPT scoring 모델은 총 용량이 매우 큰 관계로(약 9GB), 아래 
 ## 2-2. git clone
 git bash에서 아래의 커맨드를 입력하여 git clone 해옵니다.
 ~~~
-git clone https://github.com/Nokomon/django-chatbot
+git clone https://github.com/TMTsProject/django-chatbot
 ~~~
 
 ## 2-3. DialogRPT 모델 다운로드
