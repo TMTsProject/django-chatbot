@@ -16,19 +16,31 @@ from .src.generation import GPT2Generator
 #EOS_token 호출 추가
 from .src.shared import EOS_token
 
-# EOS = "<|endoftext|>"
 
+# views,py에서 호출하는 채팅 함수
 def chat(params, model, inputs, chat_history, instance=0):
+    """
+    - params: 입력받은 하이퍼파라미터
+    - model: DialoGPT와 DialogRPT가 Integrated된 모델 (Rachel 페르소나 투영된 모델)
+    - inputs: 사용자가 입력한 텍스트
+    - chat_history: 채팅을 하는동안 저장된 채팅 히스토리
+    - instance: 채팅이 몇 번 이루어졌는지 기록
+    """
+    
+    # instace변수를 참고하여, 채팅을 처음하는지 여부를 판단하여 채팅 히스토리 기록
     if instance == 0:
         chat_history = inputs
     else :
         chat_history = chat_history + EOS_token + inputs
-    ret = model.predict(chat_history, 0.4, params)
-    
+
+    # 채팅 히스토리를 고려한 응답 정보을 DialogRPT가 scoring한 순서로 ret 변수에 저장
+    # 정보는 앙상블된 점수(final), DialoGPT가 예측한 점수(prob_gen), DialogRPT가 예측한 점수(score_ranker), 챗봇 응답(hyp)으로 구성
+    ret = model.predict(chat_history, 0.4, params)  
     final, prob_gen, score_ranker, hyp = ret[0]
+
     print("Final: %.3f, Gen: %.3f, Ranker: %.3f" % (final, prob_gen, score_ranker))
 
-    chat_history = chat_history + EOS_token + hyp
+    chat_history = chat_history + EOS_token + hyp   # chat_history에 채팅 기록 저장
     return hyp, chat_history
 
 
