@@ -279,10 +279,11 @@ def chat(params, model, inputs, chat_history, instance=0):
 DialogRPT scoring 모델은 총 용량이 매우 큰 관계로(약 9GB), 아래 2-3을 참고하셔서 로컬에 다운로드 하셔야 합니다.
 
 ## 2-1. DialoGPT 학습
-`notebooks/Friends_DialoGPT.ipnyb`를 이용하여 얻은 model을 이용하여 학습합니다
+`notebooks/Friends_DialoGPT.ipnyb`를 이용하여 얻은 model을 이용하여 학습합니다.  
+그 후, 학습한 모델을 `static`폴더에 `friends_model`이라는 이름으로 저장합니다.
 
 ## 2-2. git clone
-git bash에서 아래의 커맨드를 입력하여 git clone 해옵니다.
+git bash에서 아래의 커맨드를 입력하여 본 레포지토리를 git clone합니다.
 ~~~
 git clone https://github.com/TMTsProject/django-chatbot
 ~~~
