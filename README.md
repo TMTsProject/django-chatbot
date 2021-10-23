@@ -1,48 +1,122 @@
-# Building a Platform for Learning English with a Persona-applied Chatbot through DialoGPT and DialogRPT
+# 프로젝트 제목 이곳에
 
-This is a repository for storing codes for the main project of Data on Air 2021 ([데이터 청년 캠퍼스 2021](https://dataonair.or.kr/bigjob/)).  
+데모 실행 방법 기술
+(Raw 데이터 및 전처리 데이터 일체, 코딩 파일, README 파일을 zip 형태로 제출, 코드 설명 및 사용방법을 포함하는 README 파일(.txt 또는 .md 확장자)을 제출하고, 진행 과정이 이해가도록 코드 내 주석을 반드시 포함)  
 
-Our team created an open domain chatbot which reflects a persona of someone, by having the chatbot train to imitate the utterances of him/her.  
+# 1. 코드 설명
+## 1-1. 전처리 설명
+설명설명
 
-### Background and Modeling  
-Having known that open-domain chatbots may significantly help those who wish to learn a language, we have created one that reflects the persona of Rachel Green from the drama 'Friends.' We used **DialoGPT**[[1]](#1) as a baseline model, but have integrated **DialogRPT**[[2]](#2) approaches so that the responses that the chatbot generates are not bland. A **PyTorch**-based code was used for DialoGPT and DialogRPT modeling.  
+## 1-2. 모델링 설명
+설명설명
+
+## 1-3. 백엔드에서 모델 활용방안 설명
+django app의 `views.py`와 DialogRPT_files 폴더의 `demo.py`를 중심으로 아래와 같이 설명합니다.
+
+### 1-3-1. views.py
+views.py에서 가장 핵심이 되는 함수는 `chatanswer`함수입니다. 이 함수는 아래와 같이 구성되어 있으며, 코드 설명은 주석을 참고 부탁드립니다.
+~~~
+def chatanswer(request):
+    start = time.time()
+    context = {}
+    questext = request.GET['questext']   # 사용자가 입력한 텍스트를 프론트에서 받음
+    print(questext)
+
+    # Rachel 페르소나가 투영된 모델(DialoGPT, DialogRPT가 Integrated된 형태)을 불러옴
+    rachelModel = settings.rachelModel
+    colorama.init()
+    print("loading : ", time.time() - start)
+    params = {'topk': 3, 'beam': 3, 'topp': 0.8, 'max_t':15}   # 하이퍼파라미터 설정
+    
+    # 채팅 히스토리 기록을 session에 저장한다
+    instance = request.session.get('instance', 0)
+    chat_history = request.session.get("chat_history", "")
+   
+
+    # 사용자 input에 대한 채팅의 output 반환 함수
+    def chat3(user_input_text):
+        
+        # 사용자가 채팅 히스토리를 초기화하는 커맨드 입력시
+        if user_input_text == "clear history":
+            request.session['instance'] = 0
+            request.session['chat_history'] = ""
+            print(f"History cleared! Instance: {request.session['instance']}, History: {request.session['chat_history']}")
+            return "System: History cleared."
+        
+        # DialogRPT 파일의 demo.py에 작성되어 있는 chat함수 호출함으로써 챗봇의 응답을 불러온다
+        # answer: 채팅 반환값, chat_history_from_demo: 채팅 히스토리
+        answer, chat_history_from_demo = chat(params, rachelModel, user_input_text, chat_history=chat_history, instance=instance)
+        
+        # instance, chat_history 정보를 session에 저장
+        request.session['instance'] = instance + 1
+        request.session['chat_history'] = chat_history_from_demo
+        return answer
+
+    anstext = chat3(questext)
+    print("ans : ", time.time() - start)
+    print(anstext)
+
+    context['anstext'] = anstext
+    context['flag'] = '0'
+
+    return JsonResponse(context, content_type="application/json")   # 프론트로 챗봇 응답 전달
+~~~
+
+### 1-3-2. `DialogRPT_files\src\demo.py`의 chat함수
+chat함수는 사용자가 입력한 텍스트에 대해 DialogRPT가 점수를 매겨서, 가장 최선의 답이라고 생각되는 챗봇의 응답을 반환합니다. 이 함수는 아래와 같이 구성되어 있으며, 코드 설명은 주석을 참고 부탁드립니다.
+
+~~~
+def chat(params, model, inputs, chat_history, instance=0):
+    """
+    - params: 입력받은 하이퍼파라미터
+    - model: DialoGPT와 DialogRPT가 Integrated된 모델 (Rachel 페르소나 투영된 모델)
+    - inputs: 사용자가 입력한 텍스트
+    - chat_history: 채팅을 하는동안 저장된 채팅 히스토리
+    - instance: 채팅이 몇 번 이루어졌는지 기록
+    """
+    
+    # instace변수를 참고하여, 채팅을 처음하는지 여부를 판단하여 채팅 히스토리 기록
+    if instance == 0:
+        chat_history = inputs
+    else :
+        chat_history = chat_history + EOS_token + inputs
+
+    # 채팅 히스토리를 고려한 응답 정보을 DialogRPT가 scoring한 순서로 ret 변수에 저장
+    # 정보는 앙상블된 점수(final), DialoGPT가 예측한 점수(prob_gen), DialogRPT가 예측한 점수(score_ranker), 챗봇 응답(hyp)으로 구성
+    ret = model.predict(chat_history, 0.4, params)  
+    final, prob_gen, score_ranker, hyp = ret[0]
+
+    print("Final: %.3f, Gen: %.3f, Ranker: %.3f" % (final, prob_gen, score_ranker))
+
+    chat_history = chat_history + EOS_token + hyp   # chat_history에 채팅 기록 저장
+    return hyp, chat_history
+~~~
 
 
-### How the User "Learns" from the Chatbot  
-When it comes to the "learning" part, we implemented an api from [LanguageTool](https://languagetool.org/). We linked the message that the user would type to LanguageTool in order to check whether there are spelling or grammatical errors in the user's text.  
+# 2. 사용방법
+DialogRPT scoring 모델은 총 용량이 매우 큰 관계로(약 9GB), 아래 2-3을 참고하셔서 로컬에 다운로드 하셔야 합니다.
 
+## 2-1. DialoGPT 학습
+설명설명
 
-### My contributions  
-I was responsible for data gathering, pre-processing, analyzing the modeling techniques we were to implement by examining the Hugginface Github repository, modeling the chatbots, and back-end related tasks during deploying via **Django**.
+## 2-2. git clone
+git bash에서 아래의 커맨드를 입력하여 git clone 해옵니다.
+~~~
+git clone https://github.com/Nokomon/django-chatbot
+~~~
 
-This repository generally stores everything including the Django codes, but the trained models (trained DialoGPT models) and the baseline DialogRPT models are missing, due to a storage limit. Please refer [here](https://www.notion.so/nokomon/aae788a23cab4c5882beef2af11370a1#9f33f8bd79614c2eb19b31b55a745b6c) for a demonstration video of our project.
+## 2-3. DialogRPT 모델 다운로드
+용량이 매우 큰 관계로, DialogRPT 저자가 공개한 레포지토리에서 직접 받으셔야 합니다. [이 링크](https://github.com/golsun/DialogRPT)를 통해 접속 가능합니다.  
+접속 후엔, `depth`와 `human_vs_rand` 두 pretrain 모델을 다운받으시고, `django-chatbot\static\DialogRPT_files\restore` 경로에 두 파일을 저장해줍니다.
 
-### References
-<a id="1">[1]</a> 
-Zhang, Y., et al. (2019). DialoGPT: Large-Scale Generative Pre-training for Conversational Response Generation. arXiv:1911.00536 [cs], arXiv.org, https://arxiv.org/abs/1911.00536.
+## 2-4. 로컬에서 실행
+manage.py가 있는 경로에서 아래의 코드를 실행합니다. DB 관련으로 실행해야 하는 코드입니다.
+~~~
+python manage.py makemigrations
+python manage.py migrate
+~~~
 
-<a id="2">[2]</a> 
-Gao, X. et al. (2020). Dialogue Response Ranking Training with Large-Scale Human Feedback Data. arXiv:2009.06978 [cs], arXiv.org, https://arxiv.org/abs/2009.06978
-
------------------------------------
-# 개발 로그  
-
-## static 폴더 없음
-static 폴더의 friends_model, friends_tokenizer에서  
-friends_model의 용량이 1.34GB로 크기 때문에 깃허브에는 올리지 않음.
-
-## 개발 로그
-0819 채팅 jquery 추가  
-0819 채팅 input에 대한 문법 교정 api 적용  
-- 고칠 점 : output과 함께 출력됨. input과 동시에 출력이 되도록 바꿔야 함   
-
-0820 js 이용해서 문법 교정 api 적용하는 방법 추가 (localhost:8000/api-ex)
-- UI도 간단하게 구현
-- 고칠 점 : getElementById 사용하여 여러개 교정 불가, 채팅 적용은 아직 안해봄  
-
-**--여기서부터 작업하신다면 makemigrations와 migrate하신 후에 작업하셔야 합니다!--**  
-0823 채팅 기록 남도록 수정(아래에 간단하게 설명 달아놨습니다!)  
-https://www.notion.so/21-08-23-b90d7a56ee6440ed9d28cf5a992e6cc3  
-
-0824 DialogRPT 도입 (시작하시기 전에 아래 노션을 꼭 확인해주세요!)  
-https://www.notion.so/21-08-24-0070678a01484c26bd4567b1d33f8771  
+그 후, 로컬에서 실행해줍니다.
+~~~
+python manage.py runserver
+~~~
