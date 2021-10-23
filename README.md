@@ -62,7 +62,7 @@ def chatanswer(request):
     return JsonResponse(context, content_type="application/json")   # 프론트로 챗봇 응답 전달
 ~~~
 
-### 1-3-2. `DialogRPT_files\src\demo.py`의 chat함수
+### 1-3-2. `DialogRPT_files\demo.py`의 chat함수
 chat함수는 사용자가 입력한 텍스트에 대해 DialogRPT가 점수를 매겨서, 가장 최선의 답이라고 생각되는 챗봇의 응답을 반환합니다. 이 함수는 아래와 같이 구성되어 있으며, 코드 설명은 주석을 참고 부탁드립니다.
 
 ~~~
