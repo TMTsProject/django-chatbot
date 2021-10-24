@@ -290,7 +290,7 @@ git clone https://github.com/TMTsProject/django-chatbot
 
 ## 2-3. DialogRPT 모델 다운로드
 용량이 매우 큰 관계로, DialogRPT 저자가 공개한 레포지토리에서 직접 받으셔야 합니다. [이 링크](https://github.com/golsun/DialogRPT)를 통해 접속 가능합니다.  
-접속 후엔, `depth`와 `human_vs_rand` 두 pretrain 모델을 다운로드 받으시고, `django-chatbot/static/DialogRPT_files/restore` 경로에 두 파일을 저장해줍니다.
+접속 후엔, `updown`와 `human_vs_rand` 두 pretrain 모델을 다운로드 받으시고, `django-chatbot/static/DialogRPT_files/restore` 경로에 두 파일을 저장해줍니다.
 
 ## 2-4. 로컬에서 실행
 manage.py가 있는 경로에서 아래의 코드를 실행합니다. DB 관련으로 실행해야 하는 코드입니다.
