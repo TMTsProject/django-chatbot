@@ -82,6 +82,9 @@ def chatanswer(request):
 
     return JsonResponse(context, content_type="application/json")   # 프론트로 챗봇 응답 전달
 
+def clear_history(request):
+    pass
+
 
 def today(request):
     """Shows todays current time and date."""
